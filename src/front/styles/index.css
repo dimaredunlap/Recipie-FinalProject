@@ -1,3 +1,18 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+:root{
+    --Mint: #7CD9A1;
+    --Dark-Mint: #60AB7B;
+    --Light-bg: #e1e1e1;
+    --Dark-bg: #454545;
+    --Light-tx-color: #FFFFFF;
+    --Dark-tx-color: #454545;
+
+    --H1-size: 60px;
+    --H2-size: 48px;
+    --H3-size: 36px;
+    --Sub-heading-1-size: 24px;
+    --Sub-heading-2-size: 18px;
+    --Body-size: 16px;
+}
