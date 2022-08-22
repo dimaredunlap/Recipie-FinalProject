@@ -2,8 +2,8 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./pages/home";
-// import navbarDark from "./component/navbarDark";
+import { Home } from "./View/home";
+import { Navbar } from "./component/navbar";
 import injectContext from "./store/appContext";
 
 //create your first component
@@ -16,7 +16,7 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
-          {/* <Navbar /> */}
+          <Navbar />
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<h1>Not found!</h1>} />
