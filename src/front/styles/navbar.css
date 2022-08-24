@@ -1,20 +1,20 @@
-.navbar {
-  background-image: ("img/layered-waves.jpg");
+.navImage {
+  background-position: center bottom;
 }
 .login {
   float: right;
 }
-.register{
-    float: right;
-    margin-left: 10px;
+.register {
+  float: right;
+  margin-left: 10px;
 }
-.search{
-    width: 400px;
-    border-radius: 20px;
+.search {
+  width: 400px;
+  border-radius: 20px;
 }
-.contact{
-    float:right;
+.contact {
+  float: right;
 }
-.category{
-    float: right;
+.category {
+  float: right;
 }
