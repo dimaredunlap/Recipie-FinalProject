@@ -1,7 +1,8 @@
-#carousel{
-    background: green;
+#carousel {
+  background: green;
+  width: auto;
 }
-.img{
-    max-width: 100px;
-    max-height: 100px;
+.img {
+  max-width: 100px;
+  max-height: 100px;
 }
