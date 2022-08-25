@@ -5,7 +5,7 @@ import background from "../../img/layered-waves.jpg";
 export const Navbar = () => {
   return (
     <div className="container-fluid navImage navbar" style={{backgroundImage: `url(${background})`}}>
-      <h2>Logo</h2>
+      <h2>Foodgasm</h2>
       <input className="search" type="text" placeholder="Search.."></input>
       <a href="#category" className="category">
         Category

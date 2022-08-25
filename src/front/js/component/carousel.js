@@ -5,28 +5,28 @@ export const Carousel = () => {
   return (
     <div
       id="carousel"
-      className="carousel slide carousel-fade"
+      className="carousel slide carousel-fade container"
       data-bs-ride="carousel"
     >
       <div className="carousel-inner">
-        <div className="carousel-item active">
+        <div className="carousel-item active d-flex justify-content-center">
           <img
             src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-instant-pot-pot-roast-horizontal-1545249595.jpg?crop=0.617xw:0.925xh;0.0785xw,0&resize=640:*"
-            className="d-block"
+            className="w-100"
             alt="..."
           ></img>
         </div>
-        <div className="carousel-item">
+        <div className="carousel-item d-flex justify-content-center">
           <img
             src="https://www.eatthis.com/wp-content/uploads/sites/4/2022/05/steak-n-shake-7x7-steakburger.jpg?quality=82&strip=1"
-            className="d-block"
+            className="w-100"
             alt="..."
           ></img>
         </div>
-        <div className="carousel-item">
+        <div className="carousel-item d-flex justify-content-center">
           <img
             src="https://colonydiner.com/wp-content/uploads/2021/03/French.jpg"
-            className="d-block"
+            className="w-100"
             alt="..."
           ></img>
         </div>
