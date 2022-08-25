@@ -1,0 +1,39 @@
+.navImage {
+  background-position: center bottom;
+  background-size: cover;
+  transform: rotateX(180deg);
+  height: 130px;
+}
+.login {
+  float: right;
+  transform: rotateX(180deg);
+  margin-top: 50px;
+}
+.register {
+  margin-right: -300px;
+  transform: rotateX(180deg);
+  margin-top: 50px;
+}
+.search {
+  width: 400px;
+  border-radius: 20px;
+  border-style: hidden;
+  transform: rotateX(180deg);
+  margin-left: -220px;
+  margin-top: 50px;
+}
+.contact {
+  transform: rotateX(180deg);
+  margin-top: 50px;
+  margin-left: -300px;
+}
+.category {
+  transform: rotateX(180deg);
+  color: green;
+  margin-top: 50px;
+  margin-left: -300px;
+}
+h2 {
+  transform: rotateX(180deg);
+  margin-top: 50px;
+}
