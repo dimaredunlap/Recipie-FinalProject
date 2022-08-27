@@ -7,12 +7,26 @@ from api.utils import generate_sitemap, APIException
 
 api = Blueprint('api', __name__)
 
+#user routes
+@api.route('/user', methods=['POST'])
+def post_user():
+    user_dictionary = request.json
+    user = User()
+    user.firstname = user_dictionary['firstname']
+    user.lastname = user_dictionary['lastname']
+    user.username = user_dictionary['username']
+    user.email = user_dictionary['email']
+    user.password = user_dictionary['password']
+    db.session.add(user)
+    db.session.commit()
+    user_list= [user.serialize() for user in User.query.all()]
+    return user_list
 
-@api.route('/hello', methods=['POST', 'GET'])
-def handle_hello():
-
-    response_body = {
-        "message": "Hello! I'm a message that came from the backend, check the network tab on the google inspector and you will see the GET request"
-    }
-
-    return jsonify(response_body), 200
+# @api.route('/user/:id', methods=['GET'])
+    
+    
+#receive a json payload
+#convert it to dictionary(key value pairs)
+#instantiate a user from it
+#save user in database
+#return a response
