@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/navbar.css";
 import background from "../../img/layered-waves.jpg";
+import logo from "../../img/Foodgasm-logo.png";
 import moon from "../../img/Light-mode-moon.png";
 
 
@@ -10,7 +11,7 @@ export const Navbar = () => {
     <nav id="navbar" className="navbar fixed-top navbar-expand-xl d-flex justify-content-evenly">
     <div className="container-lg">
       {/* Header/logo */}
-      <a className="navbar-brand mb-0 h1">Foodgasm</a>
+      <a className="navbar-brand mb-0 h1"><img className="logo" src={logo}></img></a>
       {/* Search bar */}
       <input className="search ms-5" type="text" placeholder="Search.."></input>
       {/* Dark/Light mode button */}

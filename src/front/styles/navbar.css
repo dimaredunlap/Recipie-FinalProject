@@ -4,19 +4,23 @@
   background-repeat: no-repeat;
   transform: rotateX(180deg);
   height: 150px;
-  margin-top:75px;
+  margin-top: 75px;
 }
-.navMoon{
+.navMoon {
   width: 50px;
   height: 50px;
   margin-left: 30px;
   background-size: 50px;
   background-repeat: no-repeat;
 }
-.navbar{
-  background-color: #7CD9A1 !important;
+.navbar {
+  background-color: #7cd9a1 !important;
   height: 75px !important;
   padding-bottom: 0px !important;
+}
+.logo {
+  width: 150px;
+  margin-top: 80px;
 }
 
 .login {
@@ -36,14 +40,11 @@
   width: 400px;
   border-radius: 20px;
   border-style: hidden;
-  
 }
 .contact {
-  
 }
 .category {
   color: var(--Dark-Mint);
 }
 h2 {
- 
 }
