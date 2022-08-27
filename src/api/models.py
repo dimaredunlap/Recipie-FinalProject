@@ -9,68 +9,72 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    username = db.Column(db.String(20), unique=True, nullable=False)
-    password = db.Column(db.String(80), unique=False, nullable=False)
-    is_active = db.Column(db.Boolean(), unique=False, nullable=False)
-    recipe = db.relationship('Recipes', backref="User", lazy="true")
-    favorite_meal = db.relationship("Favorite_meal", backref="User", lazy="true")
-    ingridient_list = db.relationship("Ingredient_list", backref="Recipes", lazy="true")
-
-
-    def __repr__(self):
-        return f'<User {self.email}>'
-
-    def serialize(self):
-        return {
-            "id": self.id,
-            "email": self.email,
-        } 
-
-class Recipes(db.model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(40), unique=True, nullable=False)
-    number_of_servings = db.Column(db.Intiger, nullable=False)
-    ingredients = db.Column(Text, nullable=False)
-    directions = db.Column(Text, nullable=False)
-    credit = db.Column(Intiger, ForeignKey('user.id'))
-    favorite_meal = db.relationship("Favorite_meal", backref="Recipes", lazy="true")
-    ingridient_list = db.relationship("Ingredient_list", backref="Recipes", lazy="true")
+class User(Base):
+    __tablename__ = 'user'
+    id = Column(Integer, primary_key=True)
+    username = Column(String(30), unique=True,nullable=False)
+    firstname = Column(String, nullable=False)
+    lastname = Column(String, nullable=False)
+    password = Column(String(20), nullable=False)
+    email = Column(String, unique=True)
     
-
     def serialize(self):
-        user = User.query.get(self.user_id)
         return{
             "id": self.id,
-            "tittle": self.tittle,
-            "number_of_serving": self.number_of_servings,
+            "username": self.username,
+            "firstname": self.firstname,
+            "lastname": self.lastname,
+            "email": self.email
+        }
+        
+class Recipe(Base):
+    __tablename__ = 'recipe'
+    id = Column(Integer, primary_key=True)
+    user = relationship(User)
+    user_id = Column(Integer, ForeignKey('user.id'))
+    title = Column(String, nullable=False, unique=True)
+    servings = Column(String, nullable=False, unique=True)
+    ingredients = Column(String, nullable=False, unique=True)
+    directions = Column(String, nullable=False, unique=True)
+    credit = Column(String)
+    
+    def serialize(self):
+        return{
+            "id": self.id,
+            "title": self.title,
+            "servings": self.servings,
             "ingredients": self.ingredients,
-            "directions": self.ingredients,
-            "credit": self.credit
+            "directions": self.directions,
+            "credit": self.credit,
+            "user_id": self.user_id,
         }
-
-class Favorite_meal(self):
-    id= db.Column(Intiger, primary_key=True)
-    user = db.Column(Intiger, ForeignKey('user.id'))
-    recipe = db.Column(String, ForeignKey("recipes.title"))
-    is_active = db.Column(db.Boolean(), unique=False, nullable=False)
-
+        
+class Favorite(Base):
+    __tablename__ = 'favorites'
+    id = Column(Integer, primary_key=True)
+    user = relationship(User)
+    user_id = Column(Integer, ForeignKey('user.id'))
+    recipe = relationship(Recipe)
+    recipe_id = Column(Integer, ForeignKey('recipe.id'))
+    recipe_name = Column(String)
+    
     def serialize(self):
-        user = User.query.get(self.user_id)
-        return {
+        return{
             "id": self.id,
-            "user": self.user,
-            "recipe": self.recipe,
-            "is_active": self.is_active
+            "recipe_name": self.recipe_name,
+            "recipe-id": self.recipe_id
         }
-
-class ingredient_list(self):
-    id = db.Column(Intiger, primary_key=True)
-    ingridients = db.Column(Text, ForeignKey("recipes.ingredients"))
+        
+class ShoppingList(Base):
+    __tablename__ = 'shopping_list'
+    id = Column(Integer, primary_key=True)
+    user = relationship(User)
+    user_id = Column(Integer, ForeignKey('user.id'))
+    item = Column(String)
 
     def serialize(self):
         return{
-            "ingredient": self.ingridients
+            "id": self.id,
+            "item": self.item,
+            
         }
