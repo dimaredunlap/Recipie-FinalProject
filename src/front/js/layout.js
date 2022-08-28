@@ -6,6 +6,7 @@ import { Home } from "./View/home";
 import { Navbar } from "./component/navbar";
 import { Carousel } from "./component/carousel";
 import injectContext from "./store/appContext";
+import { Breakfast } from "./View/breakfast";
 
 //create your first component
 const Layout = () => {
@@ -18,9 +19,9 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />
-          <Carousel />
           <Routes>
             <Route element={<Home />} path="/" />
+            <Route element={<Breakfast />} exact path="/breakfast" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>
