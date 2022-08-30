@@ -33,6 +33,7 @@ class Recipe(Base):
     user = relationship(User)
     user_id = Column(Integer, ForeignKey('user.id'))
     title = Column(String, nullable=False, unique=True)
+    description = Column(String, nullable=False)
     servings = Column(String, nullable=False, unique=True)
     ingredients = Column(String, nullable=False, unique=True)
     directions = Column(String, nullable=False, unique=True)
@@ -42,6 +43,7 @@ class Recipe(Base):
         return{
             "id": self.id,
             "title": self.title,
+            "description": self.description,
             "servings": self.servings,
             "ingredients": self.ingredients,
             "directions": self.directions,
