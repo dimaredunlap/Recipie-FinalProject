@@ -4,6 +4,7 @@ import "../../styles/register.css";
 
 export const Register = () => {
   const { store, actions } = useContext(Context);
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -31,8 +32,14 @@ export const Register = () => {
 
   return (
     <div className="text-center mt-5">
-      <h1>Login</h1>
+      <h1>Register</h1>
       <div>
+        <input
+          type="test"
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
         <input
           type="test"
           placeholder="email"
@@ -42,6 +49,12 @@ export const Register = () => {
         <input
           type="password"
           placeholder="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="confirm password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
