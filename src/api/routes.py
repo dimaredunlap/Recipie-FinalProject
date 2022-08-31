@@ -120,6 +120,38 @@ def delete_favorite(id):
     db.session.commit()
     return jsonify(remove_favorite.serialize()), 200
 
+#ShoppingList
+#get the list 
+@api.route('/list', methods=['GET'])
+def get_all_list():
+    shoppinglist = ShoppingList.query.all()
+    all_list = list(map(lambda x: x.serialize(), shoppinglist))
+    return jsonify(all_list), 200
+    
+@api.route('/list/<int:id>', methods=['GET'])
+def get_list(id):
+    shoppinglist = ShoppingList.query.filter_by(id=id).first()
+    return jsonify(shoppinglist.serialize()), 200 
+
+#Post list 
+
+@api.route('/user/list', methods=['POST'])
+def create_list():
+    shoppinglist = request.get_json()
+    new_list = ShoppingList(user_id=shoppinglist['user_id'], recipe_id=shoppinglist['recipe_id'], recipe_name=shoppinglist['recipe_name'])
+    db.session.add(new_list)
+    db.session.commit()
+    return jsonify(new_list.serialize()), 200
+
+#Delete list recipe
+@api.route('/list/<int:id>', methods=['PUT'])
+def delete_list(id):
+    remove_list = ShoppingList.query.filter_by(id=id).first()
+    print("You sure you want to delete list recipe #:" + id)
+    db.session.delete(remove_list)
+    db.session.commit()
+    return jsonify(remove_list.serialize()), 200
+
 
 
 
