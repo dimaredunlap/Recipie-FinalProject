@@ -9,7 +9,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-class User(Base):
+class User(db.Model):
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True)
     username = Column(String(30), unique=True,nullable=False)
@@ -27,7 +27,7 @@ class User(Base):
             "email": self.email
         }
         
-class Recipe(Base):
+class Recipe(db.Model):
     __tablename__ = 'recipe'
     id = Column(Integer, primary_key=True)
     user = relationship(User)
@@ -49,7 +49,7 @@ class Recipe(Base):
             "user_id": self.user_id,
         }
         
-class Favorite(Base):
+class Favorite(db.Model):
     __tablename__ = 'favorites'
     id = Column(Integer, primary_key=True)
     user = relationship(User)
@@ -65,7 +65,7 @@ class Favorite(Base):
             "recipe-id": self.recipe_id
         }
         
-class ShoppingList(Base):
+class ShoppingList(db.Model):
     __tablename__ = 'shopping_list'
     id = Column(Integer, primary_key=True)
     user = relationship(User)

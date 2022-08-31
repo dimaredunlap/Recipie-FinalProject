@@ -1,64 +1,48 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import "../../styles/register.css";
+import { RegisterUser } from "../Request/user.js";
+import { useNavigate } from "react-router-dom";
+import "../../styles/register.css"
+
+let emails = "";
+let passwords = "";
+let usernames = "";
 
 export const Register = () => {
-  const { store, actions } = useContext(Context);
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const handleClick = () => {
-    const opts = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
+    let navigate = useNavigate();
+
+    const handleChange = async (e) => {
+        try {
+            const user = {
+                email: emails,
+                password: passwords,
+                username: usernames
+            }
+            e.preventDefault()
+            await RegisterUser(user)
+            navigate("/login")
+
+        } catch { (err) => console.log(err) }
+
     };
-    fetch(`${process.env.BACKEND_URL}/api/token`, opts)
-      .then((resp) => {
-        if (resp.status === 200) return resp.json();
-        else alert("There has been an error");
-      })
-      .then((data) => console.log(data))
-      .catch((error) => {
-        console.error("There was an error!!", error);
-      });
-  };
 
   return (
     <div className="text-center mt-5">
       <h1>Register</h1>
       <div>
-        <input
-          type="test"
-          placeholder="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="test"
-          placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+      <form onSubmit={handleChange}>
+        
+        <input onChange={(e) => username = e.target.value} className="form-control" id="username" type="text" placeholder="Username" name="username" />
+        <input onChange={(e) => emails = e.target.value} className="form-control" id="email" type="text" placeholder="Email" name="email" />
+        <input onChange={(e) => passwords = e.target.value} className="form-control" id="password" type="password" placeholder="Password" name="password" />
         <input
           type="password"
           placeholder="confirm password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => passwords = e.target.value}
         />
-        <button onClick={handleClick}>Login</button>
+        <button className="btn btn-primary" type="submit">Register</button>
+        </form>
       </div>
     </div>
   );
