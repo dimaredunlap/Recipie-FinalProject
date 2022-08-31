@@ -16,7 +16,7 @@ export const Navbar = () => {
       <button type="button" className="btn btn-dark register">
         Register
       </button>
-      <button type="button" className="btn btn-dark login">
+      <button type="button" className="btn btn-dark loginButton">
         Login
       </button>
     </div>
