@@ -7,23 +7,6 @@ import moon from "../../img/Light-mode-moon.png";
 
 export const Navbar = () => {
   return (
-<<<<<<< HEAD
-    <div className="container-fluid navImage navbar" style={{backgroundImage: `url(${background})`}}>
-      <h2>Foodgasm</h2>
-      <input className="search" type="text" placeholder="Search.."></input>
-      <a href="#category" className="category">
-        Category
-      </a>
-      <a href="#Contact" className="contact">
-        Contact
-      </a>
-      <button type="button" className="btn btn-dark register">
-        Register
-      </button>
-      <button type="button" className="btn btn-dark loginButton">
-        Login
-      </button>
-=======
     <>
     <nav id="navbar" className="navbar fixed-top navbar-expand-xl d-flex justify-content-evenly">
     <div className="container-lg">
@@ -33,7 +16,7 @@ export const Navbar = () => {
       <input className="search ms-5" type="text" placeholder="Search.."></input>
       {/* Dark/Light mode button */}
     <div className="navMoon" style={{backgroundImage: `url(${moon})`}}>
->>>>>>> 048e73f09ffc94e15b434418f8846585df530529
+
     </div>
       <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span className="navbar-toggler-icon"></span>

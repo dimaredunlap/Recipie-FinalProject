@@ -11,7 +11,7 @@ from flask_jwt_extended import get_jwt_identity
 
 api = Blueprint('api', __name__)
 
-
+#JWT authentication
 @api.route('/signup', methods=['POST'])
 def post_user():
     body = request.get_json(force=True)
