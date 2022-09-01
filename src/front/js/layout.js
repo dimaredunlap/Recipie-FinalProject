@@ -5,6 +5,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./View/home";
 import { Navbar } from "./component/navbar";
 import injectContext from "./store/appContext";
+import Favorite from "./View/favorite.js";
 
 //create your first component
 const Layout = () => {
@@ -19,6 +20,7 @@ const Layout = () => {
           <Navbar />
           <Routes>
             <Route element={<Home />} path="/" />
+            <Route element={<Favorite />} path="/favorite" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>
