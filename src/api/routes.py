@@ -7,6 +7,8 @@ from api.utils import generate_sitemap, APIException
 
 api = Blueprint('api', __name__)
 
+#error handling: by id handle empty id, by post missing content
+
 #user routes
 #Get user 
 
@@ -63,7 +65,7 @@ def get_recipe(id):
     return jsonify(recipe.serialize()), 200 
 
 #Recipe post requests
-
+#need to add extra form stuff
 @api.route('/recipe', methods=['POST'])
 def post_recipe():
     recipe_dictionary = request.json
@@ -158,32 +160,7 @@ def delete_list(id):
 
 
 
-#jwt authentication
-# @api.route('/signup', methods=['POST'])
-# def post_user():
-#     body = request.get_json(force=True)
-#     new_user = User(email=body['email'], password=body['password'], is_active=True)
-#     db.session.add(new_user)
-#     db.session.commit()
-#     return jsonify(new_user.serialize()), 201
 
-# @api.route('/login', methods=['POST'])
-# def login_user():
-#     body = request.get_json(force=True)
-#     user = db.session.query(User).filter(User.email == body['email']).first()
-#     print(user.password)
-#     if user.password == body['password']:
-#         access_token = create_access_token(identity={'id': user.id})
-#         return jsonify(access_token), 200
-#     else:
-#         return jsonify('Error user not exist'), 401
-
-# @api.route('/private',methods=["GET"])
-# @jwt_required()
-# def private():
-#     user_token=get_jwt_identity()
-#     user=User.query.get(user_token)
-#     return jsonify(user.serialize()),200
 
 
     
