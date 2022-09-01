@@ -20,7 +20,6 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />
-          <Carousel />
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<FormPage />} path="/Formpage" />
