@@ -36,11 +36,11 @@ export const Register = () => {
         <input onChange={(e) => username = e.target.value} className="form-control" id="username" type="text" placeholder="Username" name="username" />
         <input onChange={(e) => emails = e.target.value} className="form-control" id="email" type="text" placeholder="Email" name="email" />
         <input onChange={(e) => passwords = e.target.value} className="form-control" id="password" type="password" placeholder="Password" name="password" />
-        <input
+        {/* <input
           type="password"
           placeholder="confirm password"
           onChange={(e) => passwords = e.target.value}
-        />
+        /> */}
         <button className="btn btn-primary" type="submit">Register</button>
         </form>
       </div>
