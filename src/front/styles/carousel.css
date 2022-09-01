@@ -1,5 +1,5 @@
 #carousel {
-  background: green;
+  background: var(--Dark-Mint);
   margin-top: 50px;
   margin-left: 100px;
   padding: auto;
