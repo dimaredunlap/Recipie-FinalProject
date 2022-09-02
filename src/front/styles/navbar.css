@@ -47,5 +47,11 @@
 .category {
   color: var(--Dark-Mint);
 }
-h2 {
+.link{
+  text-decoration: none;
+  
 }
+.dropdown-item:hover{
+  background-color: var(--Mint);
+}
+
