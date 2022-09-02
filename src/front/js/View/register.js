@@ -28,22 +28,24 @@ export const Register = () => {
     };
 
   return (
-    <div className="text-center mt-5">
-      <h1>Register</h1>
+  <div className="container d-flex justify-content-center align-self-center outter-form">
+    <div className="text-center container col w-auto">
+      <h1 className="text-center my-1">Register</h1>
       <div>
       <form onSubmit={handleChange}>
         
-        <input onChange={(e) => username = e.target.value} className="form-control" id="username" type="text" placeholder="Username" name="username" />
-        <input onChange={(e) => emails = e.target.value} className="form-control" id="email" type="text" placeholder="Email" name="email" />
-        <input onChange={(e) => passwords = e.target.value} className="form-control" id="password" type="password" placeholder="Password" name="password" />
+        <input onChange={(e) => username = e.target.value} className="form-control p-3 my-3" id="username" type="text" placeholder="Username" name="username" />
+        <input onChange={(e) => emails = e.target.value} className="form-control p-3 my-3" id="email" type="text" placeholder="Email" name="email" />
+        <input onChange={(e) => passwords = e.target.value} className="form-control p-3 my-3" id="password" type="password" placeholder="Password" name="password" />
         {/* <input
           type="password"
           placeholder="confirm password"
           onChange={(e) => passwords = e.target.value}
         /> */}
-        <button className="btn btn-primary" type="submit">Register</button>
+        <button className="btn reg-btn" type="submit">Register</button>
         </form>
       </div>
     </div>
+  </div>
   );
 };

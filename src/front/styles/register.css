@@ -1,0 +1,16 @@
+.outter-form{
+    width: 500px;
+    height: 350px;
+    background-color: var(--Dark-Mint);
+}
+.reg-btn{
+    color: var(--Light-tx-color);
+    margin-right: 20px;
+  background-color: var(--Dark-bg);
+  border-radius: 50px;
+  border: 1px solid var(--Dark-bg);
+}
+.reg-btn:hover{
+    background-color: var(--Dark-bg);
+    color: var(--Mint)
+}
