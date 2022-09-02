@@ -8,22 +8,47 @@ export  const FormPage = () => {
            
 
   <form class="row g-3"/>
-  <div class="col-md-6">
+
+  <div class="rtitle">
   <label for="rtitle">Recipe Title:</label>
-  <input type="text" id="rtitle" name="rtitle" required placeholder="Hambuger"/>
+  <input class="form-control input-sm" id="rtitle" type="text"/>
   </div>
-  <div class="col-md-6">
-  <label for="nservings">Number of Servings *:</label>
-  <input type="text" id="nservings" name="nservings"/>
+
+  <div class="nos">
+  <label for="servings">Number of Servings:</label>
+  <input class="form-control input-sm" id="servings" type="text"/>
   </div>
-  <div class="col-md-12">
-  <label for="ingre">Ingredients *:</label>
-  <input type="text" id="ingre" name="ingre"/>
+
+  <div class="ing">
+    <label for="ingre">Ingredients</label>
+    <textarea class="form-control input-sm" id="ingre" rows="3" type="textarea"/>
   </div>
-  <div class="col-md-12">
-  <label for="direct">Directions *:</label>
-  <input type="text" id="direct" name="direct"/>
+
+  <div class="direct">
+  <label for="directions">Directions</label>
+  <textarea class="form-control input-sm" id="directions" rows="3" type="textarea"/>
   </div>
+
+  <div class="preptime">
+    <label for="preptime">Prep Time</label>
+    <input class="form-control input-sm" id="preptime" type="text"/>
+  </div>
+
+  <div class="cooktime">
+    <label for="cooktime">Cook time</label>
+    <input class="form-control input-sm" id="cooktime" type="text"/>
+  </div>
+  
+  <div class="totaltime">
+    <label for="totaltime">Total Time</label>
+    <input class="form-control input-sm" id="totaltime" type="text"/>
+  </div>
+
+  <div class="credit">
+    <label for="credit">Credit</label>
+    <input class="form-control input-sm" id="credit" type="text"/>
+  </div>
+ 
   
   
 <button>Submit</button>
