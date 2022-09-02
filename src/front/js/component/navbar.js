@@ -3,15 +3,29 @@ import "../../styles/navbar.css";
 import background from "../../img/layered-waves.jpg";
 import logo from "../../img/Foodgasm-logo.png";
 import moon from "../../img/Light-mode-moon.png";
+import { useNavigate, Link, NavLink} from "react-router-dom";
 
 
 export const Navbar = () => {
+  let navigate = useNavigate();
+  function navToReg(){
+    navigate("/register");
+  }
+  function navToLog(){
+    navigate("/login");
+  }
+  function navToHome(){
+    navigate("/home");
+  }
   return (
     <>
     <nav id="navbar" className="navbar fixed-top navbar-expand-xl d-flex justify-content-evenly">
     <div className="container-lg">
       {/* Header/logo */}
-      <a className="navbar-brand mb-0 h1"><img className="logo" src={logo}></img></a>
+      <Link to="/">
+        <img className="logo" src={logo}></img>
+        </Link>
+      
       {/* Search bar */}
       <input className="search ms-5" type="text" placeholder="Search.."></input>
       {/* Dark/Light mode button */}
@@ -28,8 +42,19 @@ export const Navbar = () => {
       </div>
       <div className="offcanvas-body">
         <ul className="navbar-nav justify-content-evenly flex-grow-1 pe-3">
-          <li className="nav-item">
-            <a className="nav-link" aria-current="page" href="#">Meal Types</a>
+
+          <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Meal Types</a>
+            <ul className="dropdown-menu">
+              <Link to="/"className="link" >
+              <li className="dropdown-item link-item">Breakfast</li>
+              </Link>
+              <li className="dropdown-item">Lunch</li>
+              <li className="dropdown-item">Dinner</li>
+              <li className="dropdown-item">Desserts</li>
+              <li className="dropdown-item">Drinks</li>
+              <li className="dropdown-item">Snacks</li>
+            </ul>
           </li>
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,10 +69,10 @@ export const Navbar = () => {
             </ul>
           </li>
         </ul>
-        <button type="button" className="btn btn-dark register">
+        <button type="button" onClick={navToReg} className="btn btn-dark register">
         Register
         </button>
-        <button type="button" className="btn btn-dark login">
+        <button type="button" onClick={navToLog} className="btn btn-dark login">
         Login
         </button>
       </div>
