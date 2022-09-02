@@ -30,8 +30,6 @@ def get_user(id):
 def post_user():
     user_dictionary = request.json
     user = User()
-    user.firstname = user_dictionary['firstname']
-    user.lastname = user_dictionary['lastname']
     user.username = user_dictionary['username']
     user.email = user_dictionary['email']
     user.password = user_dictionary['password']
@@ -72,6 +70,9 @@ def post_recipe():
     recipe = Recipe()
     recipe.title = recipe_dictionary['title']
     recipe.servings = recipe_dictionary['servings']
+    recipe.prep_time = recipe_dictionary['prep_time']
+    recipe.cook_time = recipe_dictionary['cook_time']
+    recipe.total_time = recipe_dictionary['total_time']
     recipe.ingredients = recipe_dictionary['ingredients']
     recipe.directions = recipe_dictionary['directions']
     db.session.add(recipe)

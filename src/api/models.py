@@ -13,8 +13,6 @@ class User(db.Model):
     
     id = Column(Integer, primary_key=True)
     username = Column(String(30), unique=True,nullable=False)
-    firstname = Column(String, nullable=False)
-    lastname = Column(String, nullable=False)
     password = Column(String(20), nullable=False)
     email = Column(String, unique=True)
     
@@ -34,6 +32,9 @@ class Recipe(db.Model):
     user_id = Column(Integer, ForeignKey('user.id'))
     title = Column(String, nullable=False, unique=True)
     servings = Column(String, nullable=False, unique=True)
+    prep_time = Column(Intiger, nullable=False)
+    cook_time = Column(Intiger, nullable=False)
+    total_time = Column(Intiger, nullable=False)
     ingredients = Column(String, nullable=False, unique=True)
     directions = Column(String, nullable=False, unique=True)
     credit = Column(String)
@@ -43,6 +44,9 @@ class Recipe(db.Model):
             "id": self.id,
             "title": self.title,
             "servings": self.servings,
+            "prep_time": self.prep_time,
+            "cook_time": self.cook_time,
+            "total_time": self.total_time,
             "ingredients": self.ingredients,
             "directions": self.directions,
             "credit": self.credit,
