@@ -1,7 +1,19 @@
 
-header{
-    background-color: mediumspringgreen;   
+.h1-container{
+    background-color: var(--Mint);  
+     width: auto;
+    border: 25px; 
+    padding-left: 10px;
+    padding-right: 10px;
 }
 h1 {
     text-align: center;
+    font-size: var(--H2-size);
+    
+}
+
+    
+.form {
+    background-color: var(--Light-bg);
+    border-radius: 25px;
 }
