@@ -7,7 +7,10 @@ import { Register } from "./View/register.js";
 import { Login } from "./View/login.js";
 import { Navbar } from "./component/navbar";
 import injectContext from "./store/appContext";
+
 import Favorite from "./View/favorite.js";
+import { Breakfast } from "./View/breakfast";
+
 
 //create your first component
 const Layout = () => {
@@ -22,9 +25,11 @@ const Layout = () => {
           <Navbar />
           <Routes>
             <Route element={<Home />} path="/" />
+
             <Route element={<Register />} path="/register" />
             <Route element={<Login />} path="/login" />
             <Route element={<Favorite />} path="/favorite" />
+            <Route element={<Breakfast />} exact path="/breakfast" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>
