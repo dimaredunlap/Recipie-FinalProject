@@ -9,8 +9,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-class User(Base):
-    __tablename__ = 'user'
+class User(db.Model):
+    
     id = Column(Integer, primary_key=True)
     username = Column(String(30), unique=True,nullable=False)
     firstname = Column(String, nullable=False)
@@ -27,12 +27,13 @@ class User(Base):
             "email": self.email
         }
         
-class Recipe(Base):
-    __tablename__ = 'recipe'
+class Recipe(db.Model):
+    
     id = Column(Integer, primary_key=True)
     user = relationship(User)
     user_id = Column(Integer, ForeignKey('user.id'))
     title = Column(String, nullable=False, unique=True)
+    description = Column(String, nullable=False)
     servings = Column(String, nullable=False, unique=True)
     ingredients = Column(String, nullable=False, unique=True)
     directions = Column(String, nullable=False, unique=True)
@@ -42,6 +43,7 @@ class Recipe(Base):
         return{
             "id": self.id,
             "title": self.title,
+            "description": self.description,
             "servings": self.servings,
             "ingredients": self.ingredients,
             "directions": self.directions,
@@ -49,8 +51,8 @@ class Recipe(Base):
             "user_id": self.user_id,
         }
         
-class Favorite(Base):
-    __tablename__ = 'favorites'
+class Favorite(db.Model):
+    
     id = Column(Integer, primary_key=True)
     user = relationship(User)
     user_id = Column(Integer, ForeignKey('user.id'))
@@ -65,8 +67,8 @@ class Favorite(Base):
             "recipe-id": self.recipe_id
         }
         
-class ShoppingList(Base):
-    __tablename__ = 'shopping_list'
+class ShoppingList(db.Model):
+    
     id = Column(Integer, primary_key=True)
     user = relationship(User)
     user_id = Column(Integer, ForeignKey('user.id'))
