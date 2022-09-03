@@ -13,8 +13,6 @@ class User(db.Model):
     
     id = Column(Integer, primary_key=True)
     username = Column(String(30), unique=True,nullable=False)
-    firstname = Column(String, nullable=False)
-    lastname = Column(String, nullable=False)
     password = Column(String(20), nullable=False)
     email = Column(String, unique=True)
     
@@ -22,8 +20,6 @@ class User(db.Model):
         return{
             "id": self.id,
             "username": self.username,
-            "firstname": self.firstname,
-            "lastname": self.lastname,
             "email": self.email
         }
         

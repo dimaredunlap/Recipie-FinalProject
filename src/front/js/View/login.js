@@ -24,7 +24,7 @@ export const Login = () => {
     } catch (err) {
       console.log("Login error: ", err);
     } finally {
-      navigate("/home");
+      navigate("/");
     }
   };
 

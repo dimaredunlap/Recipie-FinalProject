@@ -2,6 +2,7 @@
     width: 500px;
     height: 350px;
     background-color: var(--Dark-Mint);
+    border-radius: 30px;
 }
 .reg-btn{
     color: var(--Light-tx-color);
