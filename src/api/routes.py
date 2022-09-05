@@ -21,7 +21,10 @@ def get_all_user():
 @api.route('/user/<int:id>', methods=['GET'])
 def get_user(id):
     user = User.query.filter_by(id=id).first()
-    return jsonify(user.serialize()), 200 
+    if user: 
+        return jsonify(user.serialize()), 200
+    else: 
+        return jsonify({"fail": "id doesn't exist"}), 404
 
 
 #Post user
@@ -46,6 +49,8 @@ def delete_user(id):
     print("You sure you want to delete user #:" + str(id))
     db.session.delete(remove_user)
     db.session.commit()
+    if not remove_user:
+        return jsonify({"error": "User not found"}), 404
     return jsonify(remove_user.serialize()), 200
 
 #Recipie routes
@@ -60,7 +65,10 @@ def get_all_recipes():
 @api.route('/recipe/<int:id>', methods=['GET'])
 def get_recipe(id):
     recipe = Recipe.query.filter_by(id=id).first()
-    return jsonify(recipe.serialize()), 200 
+    if recipe:
+        return jsonify(recipe.serialize()), 200
+    else: 
+        return jsonify({"fail": "id doesn't exist"}), 404
 
 #Recipe post requests
 #need to add extra form stuff
@@ -89,6 +97,8 @@ def delete_recipe(id):
     print("You sure you want to delete recipe #:" + id)
     db.session.delete(remove_recipe)
     db.session.commit()
+    if not remove_recipe:
+        return jsonify({"error": "id not found"}), 404
     return jsonify(remove_recipe.serialize()), 200
 
 #Favorite Routes
@@ -103,7 +113,10 @@ def get_all_favorites():
 @api.route('/favorite/<int:id>', methods=['GET'])
 def get_favorite(id):
     favorite = Favorite.query.filter_by(id=id).first()
-    return jsonify(favorite.serialize()), 200 
+    if favorite:
+        return jsonify(favorite.serialize()), 200 
+    else: 
+        return jsonify({"fail": "id doesn't exist"}), 404
 
 #Post Favorite 
 
@@ -122,6 +135,8 @@ def delete_favorite(id):
     print("You sure you want to delete favorite recipe #:" + id)
     db.session.delete(remove_favorite)
     db.session.commit()
+    if not remove_favorite:
+        return jsonify({"error": "id not found"}), 404
     return jsonify(remove_favorite.serialize()), 200
 
 #ShoppingList
@@ -135,7 +150,10 @@ def get_all_list():
 @api.route('/list/<int:id>', methods=['GET'])
 def get_list(id):
     shoppinglist = ShoppingList.query.filter_by(id=id).first()
-    return jsonify(shoppinglist.serialize()), 200 
+    if shoppinglist:
+        return jsonify(shoppinglist.serialize()), 200 
+    else: 
+        return jsonify({"fail": "id doesn't exist"}), 404
 
 #Post list 
 
@@ -154,6 +172,8 @@ def delete_list(id):
     print("You sure you want to delete list recipe #:" + id)
     db.session.delete(remove_list)
     db.session.commit()
+    if not remove_list:
+        return jsonify({"error": "id not found"}), 404
     return jsonify(remove_list.serialize()), 200
 
 
