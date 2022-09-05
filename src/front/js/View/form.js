@@ -50,10 +50,24 @@ export  const FormPage = () => {
               <input class="form-control input-sm" id="credit" type="text" />
             </div>
 
+            <div>
+            <form>
+
+              <label for="menu type">Choose a car:</label>
+              <select name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+               </select>
+              </form>
+
+
+          </div>
+
+
             <label class="customFile" for="customFile">Submit Photo Here</label>
             <input type="file" class="form-control" id="customFile" />
-
-
             <div class="btn">
             <button>Submit</button>
             </div>
