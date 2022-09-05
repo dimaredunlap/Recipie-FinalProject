@@ -3,9 +3,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./View/home";
+import { Register } from "./View/register.js";
+import { Login } from "./View/login.js";
 import { Navbar } from "./component/navbar";
-import { Carousel } from "./component/carousel";
 import injectContext from "./store/appContext";
+import Favorite from "./View/favorite.js";
 
 //create your first component
 const Layout = () => {
@@ -18,9 +20,11 @@ const Layout = () => {
       <BrowserRouter basename={basename}>
         <ScrollToTop>
           <Navbar />
-          <Carousel />
           <Routes>
             <Route element={<Home />} path="/" />
+            <Route element={<Register />} path="/register" />
+            <Route element={<Login />} path="/login" />
+            <Route element={<Favorite />} path="/favorite" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>

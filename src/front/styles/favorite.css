@@ -1,0 +1,38 @@
+#h1{
+    color: var(--Dark-tx-color);
+    font-size: var(--H2-size);
+    padding-top: 15px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+.card-body{
+  background-color: var(--Light-bg);
+}
+.card-title {
+ color: var(--Dark-tx-color);
+ font-size: var(--Sub-heading-1-size);
+ padding-left: 16px;
+}
+.card-text{
+
+}
+.card-footer{
+    background-color: var(--Mint);
+}
+.btn{
+    background-color: var(--Dark-bg);
+    border: 1px, solid, var(--Dark-bg);
+    border-radius: 30px;
+}
+.btn:hover{
+    background-color: var(--Dark-Mint);
+    border:1px, solid, var(--Dark-Mint);
+
+}
+.btn:visited{
+    background-color: var(--Dark-Mint);
+    border:1px, solid, var(--Dark-Mint);
+    outline: 3px, var(--Dark-bg);
+}
+
+
