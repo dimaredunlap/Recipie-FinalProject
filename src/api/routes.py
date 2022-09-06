@@ -187,7 +187,7 @@ def delete_list(id):
 
 #JWT authentication
 @api.route('/signup', methods=['POST'])
-def post_user():
+def signup_user():
     body = request.get_json(force=True)
     new_user = User(email=body['email'], password=body['password'], is_active=True)
     db.session.add(new_user)

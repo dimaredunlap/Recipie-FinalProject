@@ -1,6 +1,12 @@
 import React from "react";
+import { useState } from "react";
 import "../../styles/form.css"
 export  const FormPage = () => {
+  const [title, setTitle] = useState('')
+
+  function onsubmit() {
+    
+  };
     return(
       <div class="container form mt-5">
           <div className="h1-container">
@@ -12,7 +18,7 @@ export  const FormPage = () => {
 
             <div class="rtitle">
               <label for="rtitle">Recipe Title:</label>
-              <input class="form-control input-sm" id="rtitle" type="text" />
+              <input  value={title} onChange={(e) => setTitle(e.target.value)} class="form-control input-sm" id="rtitle" type="text" />
             </div>
 
             <div class="nos">
@@ -72,7 +78,7 @@ export  const FormPage = () => {
             <label class="customFile" for="customFile">Submit Photo Here</label>
             <input type="file" class="form-control  btn my-3" id="customFile" />
             <div>
-            <button className="btn my-3">Submit</button>
+            <button onClick={onsubmit}className="btn my-3">Submit</button>
             </div>
 
 

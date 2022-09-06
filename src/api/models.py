@@ -32,13 +32,13 @@ class Recipe(db.Model):
     user_id = Column(Integer, ForeignKey('user.id'))
     title = Column(String, nullable=False, unique=True)
     description = Column(String, nullable=False)
-    servings = Column(String, nullable=False, unique=True)
+    servings = Column(String, nullable=False)
     prep_time = Column(Integer, nullable=False)
     cook_time = Column(Integer, nullable=False)
     total_time = Column(Integer, nullable=False)
-    ingredients = Column(String, nullable=False, unique=True)
+    ingredients = Column(String, nullable=False)
     directions = Column(String, nullable=False, unique=True)
-    category = Column(String, nullable=False, unique=True)
+    category = Column(String, nullable=False)
     credit = Column(String)
     
     def serialize(self):
