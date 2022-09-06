@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/form.css"
 export  const FormPage = () => {
     return(
-      <div class="container form">
+      <div class="container form mt-5">
           <div className="h1-container">
           <h1 class="heading">Submit your recipe to Foodgasm</h1>
           </div>
@@ -51,16 +51,16 @@ export  const FormPage = () => {
             </div>
 
             <div>
-            <form>
+            <form className="mt-2">
 
               <label for="menu type">Meal Type:</label>
               <select name="mealtype" id="mealtype">
-                <option value="volvo">Breakfast</option>
-                <option value="saab">Lunch</option>
-                <option value="opel">Dinner</option>
-                <option value="audi">Desserts</option>
-                <option value="audi">Snacks</option>
-                <option value="audi">Drinks</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="dessert">Desserts</option>
+                <option value="snacks">Snacks</option>
+                <option value="drinks">Drinks</option>
 
                </select>
               </form>
@@ -70,9 +70,9 @@ export  const FormPage = () => {
 
 
             <label class="customFile" for="customFile">Submit Photo Here</label>
-            <input type="file" class="form-control" id="customFile" />
-            <div class="btn">
-            <button>Submit</button>
+            <input type="file" class="form-control  btn my-3" id="customFile" />
+            <div>
+            <button className="btn my-3">Submit</button>
             </div>
 
 
