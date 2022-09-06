@@ -53,12 +53,15 @@ export  const FormPage = () => {
             <div>
             <form>
 
-              <label for="menu type">Choose a car:</label>
-              <select name="cars" id="cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="opel">Opel</option>
-                <option value="audi">Audi</option>
+              <label for="menu type">Meal Type:</label>
+              <select name="mealtype" id="mealtype">
+                <option value="volvo">Breakfast</option>
+                <option value="saab">Lunch</option>
+                <option value="opel">Dinner</option>
+                <option value="audi">Desserts</option>
+                <option value="audi">Snacks</option>
+                <option value="audi">Drinks</option>
+
                </select>
               </form>
 

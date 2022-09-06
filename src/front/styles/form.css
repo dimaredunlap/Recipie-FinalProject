@@ -18,3 +18,8 @@ h1 {
     background-color: var(--Light-bg);
     border-radius: 25px;
 }
+.btn{
+    background-color: var(--Dark-bg);
+    border-radius: 50px;
+    border: 1px solid var(--Dark-bg);
+}
