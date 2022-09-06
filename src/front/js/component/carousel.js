@@ -3,9 +3,10 @@ import "../../styles/carousel.css";
 
 export const Carousel = () => {
   return (
+    <div className="container d-flex">
     <div
-      id="carousel"
-      className="carousel slide carousel-fade container"
+      id="carouselExampleFade"
+      className="carousel slide carousel-fade float-start"
       data-bs-ride="carousel"
     >
       <div className="carousel-inner">
@@ -49,6 +50,14 @@ export const Carousel = () => {
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>
+    </div>
+    <div className="description">
+    <h1>Meals of the day</h1>
+    <p>meal type of the day</p>
+    {/* api info */}
+    
+
+    </div>
     </div>
   );
 };
