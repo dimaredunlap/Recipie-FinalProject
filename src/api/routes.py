@@ -81,14 +81,17 @@ def get_recipe(id):
 def post_recipe():
     recipe_dictionary = request.json
     recipe = Recipe()
-    recipe.title = recipe_dictionary['title']
-    recipe.servings = recipe_dictionary['servings']
-    recipe.prep_time = recipe_dictionary['prep_time']
-    recipe.cook_time = recipe_dictionary['cook_time']
-    recipe.total_time = recipe_dictionary['total_time']
-    recipe.ingredients = recipe_dictionary['ingredients']
-    recipe.directions = recipe_dictionary['directions']
-    recipe.category = recipe_dictionary['category']
+    try:
+        recipe.title = recipe_dictionary['title']
+        recipe.servings = recipe_dictionary['servings']
+        recipe.prep_time = recipe_dictionary['prep_time']
+        recipe.cook_time = recipe_dictionary['cook_time']
+        recipe.total_time = recipe_dictionary['total_time']
+        recipe.ingredients = recipe_dictionary['ingredients']
+        recipe.directions = recipe_dictionary['directions']
+        recipe.category = recipe_dictionary['category']
+    except:
+        return jsonify({"fail": "missing some content"})
     db.session.add(recipe)
     db.session.commit()
     recipe_list= [recipe.serialize() for recipe in Recipe.query.all()]
