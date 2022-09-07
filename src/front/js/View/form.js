@@ -3,6 +3,13 @@ import { useState } from "react";
 import "../../styles/form.css"
 export  const FormPage = () => {
   const [title, setTitle] = useState('')
+  const [servings, setServings] = useState('')
+  const [ingredients, setIngredients] = useState('')
+  const [directions, setDirections] = useState('')
+  const [prepTime, setPrepTime] = useState('')
+  const [cookTime, setCookTime] = useState('')
+  const [totalTime, setTotalTime] = useState('')
+  const [mealType, setMealType] = useState('')
 
   function onsubmit() {
     
@@ -23,44 +30,44 @@ export  const FormPage = () => {
 
             <div class="nos">
               <label for="servings">Number of Servings:</label>
-              <input class="form-control input-sm" id="servings" type="text" />
+              <input value={servings} onChange={(e) => setServings(e.target.value)} class="form-control input-sm" id="servings" type="text" />
             </div>
 
             <div class="ing">
               <label for="ingre">Ingredients:</label>
-              <textarea class="form-control input-sm" id="ingre" rows="3" type="textarea" />
+              <textarea value={ingredients} onChange={(e) => setIngredients(e.target.value)} class="form-control input-sm" id="ingre" rows="3" type="textarea" />
             </div>
 
             <div class="direct">
               <label for="directions">Directions:</label>
-              <textarea class="form-control input-sm" id="directions" rows="3" type="textarea" />
+              <textarea value={directions} onChange={(e) => setDirections(e.target.value)} class="form-control input-sm" id="directions" rows="3" type="textarea" />
             </div>
 
             <div class="preptime">
               <label for="preptime">Prep Time:</label>
-              <input class="form-control input-sm" id="preptime" type="text" />
+              <input value={prepTime} onChange={(e) => setPrepTime(e.target.value)} class="form-control input-sm" id="preptime" type="text" />
             </div>
 
             <div class="cooktime">
               <label for="cooktime">Cook time:</label>
-              <input class="form-control input-sm" id="cooktime" type="text" />
+              <input value={cookTime} onChange={(e) => setCookTime(e.target.value)} class="form-control input-sm" id="cooktime" type="text" />
             </div>
 
             <div class="totaltime">
               <label for="totaltime">Total Time:</label>
-              <input class="form-control input-sm" id="totaltime" type="text" />
+              <input value={totalTime} onChange={(e) => setTotalTime(e.target.value)} class="form-control input-sm" id="totaltime" type="text" />
             </div>
 
             <div class="credit">
               <label for="credit">Credit:</label>
-              <input class="form-control input-sm" id="credit" type="text" />
+              <input value={credit} onChange={(e) => setCredit(e.target.value)} class="form-control input-sm" id="credit" type="text" />
             </div>
 
             <div>
             <form className="mt-2">
 
               <label for="menu type">Meal Type:</label>
-              <select name="mealtype" id="mealtype">
+              <select value={mealType} onChange={(e) => setMealType(e.target.value)} name="mealtype" id="mealtype">
                 <option value="breakfast">Breakfast</option>
                 <option value="lunch">Lunch</option>
                 <option value="dinner">Dinner</option>
