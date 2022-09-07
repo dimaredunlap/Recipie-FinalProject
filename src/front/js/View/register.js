@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { RegisterUser } from "../Request/user.js";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../styles/register.css"
 
 
@@ -27,10 +27,10 @@ export const Register = () => {
     };
 
   return (
-  <div className="container d-flex justify-content-center align-self-center outter-form">
+  <div className="container d-flex justify-content-center align-self-center outter-form col-5 ">
     <div className="text-center container col w-auto">
-      <h1 className="text-center my-1">Register</h1>
-      <div>
+      <h1 className="text-center my-2">Register</h1>
+      <div className="container">
       <form onSubmit={handleSubmit}>
         
         <input onChange={(e) => setUsername(e.target.value)} 
@@ -42,12 +42,11 @@ export const Register = () => {
         <input onChange={(e) => setPassword(e.target.value)} 
         value={password}
         className="form-control p-3 my-3" id="password" type="password" placeholder="Password" name="password" />
-        {/* <input
-          type="password"
-          placeholder="confirm password"
-          onChange={(e) => passwords = e.target.value}
-        /> */}
-        <button className="btn reg-btn" type="submit">Register</button>
+       
+        <button className="btn reg-btn btn-grad" type="submit">Register</button>
+        <Link to="/login">
+        <button className="btn reg-btn btn-grad" type="submit">Log in</button>
+        </Link>
         </form>
       </div>
     </div>
