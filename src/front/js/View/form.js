@@ -10,63 +10,64 @@ export  const FormPage = () => {
   const [cookTime, setCookTime] = useState('')
   const [totalTime, setTotalTime] = useState('')
   const [mealType, setMealType] = useState('')
+  const [credit, setCredit] = useState('')
 
   function onsubmit() {
     
   };
     return(
-      <div class="container form mt-5">
+      <div className="container form mt-5">
           <div className="h1-container">
-          <h1 class="heading">Submit your recipe to Foodgasm</h1>
+          <h1 className="heading">Submit your recipe to Foodgasm</h1>
           </div>
-          <div class=" container mt 8">
+          <div className=" container mt 8">
           
-            <form class="row g-8 mb-100" />
+            <form className="row g-8 mb-100" />
 
-            <div class="rtitle">
-              <label for="rtitle">Recipe Title:</label>
-              <input  value={title} onChange={(e) => setTitle(e.target.value)} class="form-control input-sm" id="rtitle" type="text" />
+            <div className="rtitle">
+              <label htmlFor="rtitle">Recipe Title:</label>
+              <input  value={title} onChange={(e) => setTitle(e.target.value)} className="form-control input-sm" id="rtitle" type="text" />
             </div>
 
-            <div class="nos">
-              <label for="servings">Number of Servings:</label>
-              <input value={servings} onChange={(e) => setServings(e.target.value)} class="form-control input-sm" id="servings" type="text" />
+            <div className="nos">
+              <label htmlFor="servings">Number of Servings:</label>
+              <input value={servings} onChange={(e) => setServings(e.target.value)} className="form-control input-sm" id="servings" type="text" />
             </div>
 
-            <div class="ing">
-              <label for="ingre">Ingredients:</label>
-              <textarea value={ingredients} onChange={(e) => setIngredients(e.target.value)} class="form-control input-sm" id="ingre" rows="3" type="textarea" />
+            <div className="ing">
+              <label htmlFor="ingre">Ingredients:</label>
+              <textarea value={ingredients} onChange={(e) => setIngredients(e.target.value)} className="form-control input-sm" id="ingre" rows="3" type="textarea" />
             </div>
 
-            <div class="direct">
-              <label for="directions">Directions:</label>
-              <textarea value={directions} onChange={(e) => setDirections(e.target.value)} class="form-control input-sm" id="directions" rows="3" type="textarea" />
+            <div className="direct">
+              <label htmlFor="directions">Directions:</label>
+              <textarea value={directions} onChange={(e) => setDirections(e.target.value)} className="form-control input-sm" id="directions" rows="3" type="textarea" />
             </div>
 
-            <div class="preptime">
-              <label for="preptime">Prep Time:</label>
-              <input value={prepTime} onChange={(e) => setPrepTime(e.target.value)} class="form-control input-sm" id="preptime" type="text" />
+            <div className="preptime">
+              <label htmlFor="preptime">Prep Time:</label>
+              <input value={prepTime} onChange={(e) => setPrepTime(e.target.value)} className="form-control input-sm" id="preptime" type="text" />
             </div>
 
-            <div class="cooktime">
-              <label for="cooktime">Cook time:</label>
-              <input value={cookTime} onChange={(e) => setCookTime(e.target.value)} class="form-control input-sm" id="cooktime" type="text" />
+            <div className="cooktime">
+              <label htmlFor="cooktime">Cook time:</label>
+              <input value={cookTime} onChange={(e) => setCookTime(e.target.value)} className="form-control input-sm" id="cooktime" type="text" />
             </div>
 
-            <div class="totaltime">
-              <label for="totaltime">Total Time:</label>
-              <input value={totalTime} onChange={(e) => setTotalTime(e.target.value)} class="form-control input-sm" id="totaltime" type="text" />
+            <div className="totaltime">
+              <label htmlFor="totaltime">Total Time:</label>
+              <input value={totalTime} onChange={(e) => setTotalTime(e.target.value)} className="form-control input-sm" id="totaltime" type="text" />
             </div>
 
-            <div class="credit">
-              <label for="credit">Credit:</label>
-              <input value={credit} onChange={(e) => setCredit(e.target.value)} class="form-control input-sm" id="credit" type="text" />
+            <div className="credit">
+              <label htmlFor="credit">Credit:</label>
+              <input value={credit} onChange={(e) => setCredit(e.target.value)} className="form-control input-sm" id="credit" type="text" />
             </div>
 
             <div>
             <form className="mt-2">
 
-              <label for="menu type">Meal Type:</label>
+              <label htmlFor="menu type">Meal Type:</label>
               <select value={mealType} onChange={(e) => setMealType(e.target.value)} name="mealtype" id="mealtype">
                 <option value="breakfast">Breakfast</option>
                 <option value="lunch">Lunch</option>
@@ -82,8 +83,8 @@ export  const FormPage = () => {
           </div>
 
 
-            <label class="customFile" for="customFile">Submit Photo Here</label>
-            <input type="file" class="form-control  btn my-3" id="customFile" />
+            <label className="customFile" htmlFor="customFile">Submit Photo Here</label>
+            <input type="file" className="form-control  btn my-3" id="customFile" />
             <div>
             <button onClick={onsubmit}className="btn my-3">Submit</button>
             </div>
