@@ -68,7 +68,7 @@ export  const FormPage = () => {
                 <option value="snacks">Snacks</option>
                 <option value="drinks">Drinks</option>
 
-               </select>
+              </select>
               </form>
 
 
@@ -76,7 +76,7 @@ export  const FormPage = () => {
 
 
             <label class="customFile" for="customFile">Submit Photo Here</label>
-            <input type="file" class="form-control  btn my-3" id="customFile" />
+            <input type="file" class="form-control  my-3" id="customFile" />
             <div>
             <button onClick={onsubmit}className="btn my-3">Submit</button>
             </div>
