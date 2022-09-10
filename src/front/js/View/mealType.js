@@ -13,9 +13,9 @@ export const MealType = () => {
     <div className="text-center mt-5">
       <h1>Drinks</h1>
       <p> Last call! </p>
-      <Row xs={1} md={2} lg={4} className="g-4 container">
+      <Row className="container">
         {Array.from({ length: 4 }).map((_, idx) => (
-          <Col>
+          <Col xs={12} className="container my-3">
             <Card />
           </Col>
         ))}
