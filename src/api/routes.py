@@ -189,7 +189,7 @@ def delete_list(id):
 @api.route('/signup', methods=['POST'])
 def signup_user():
     body = request.get_json(force=True)
-    new_user = User(email=body['email'], password=body['password'])
+    new_user = User(email=body['email'], password=body['password'], username=body['username'])
     db.session.add(new_user)
     db.session.commit()
     return jsonify(new_user.serialize()), 201
@@ -211,4 +211,3 @@ def private():
     user_token=get_jwt_identity()
     user=User.query.get(user_token)
     return jsonify(user.serialize()),200
-

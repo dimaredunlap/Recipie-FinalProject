@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { LoginUser } from "../Request/user.js";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "../../styles/login.css";
 
 let email = "";
@@ -24,14 +24,14 @@ export const Login = () => {
     } catch (err) {
       console.log("Login error: ", err);
     } finally {
-      navigate("/home");
+      navigate("/");
     }
   };
 
   return (
-    <div className="text-center container col-3 position-absolute top-50 start-50 translate-middle">
+    <div className="text-center container col-5 outter-form">
       <h1 className="mb-4">Login</h1>
-      <div>
+      <div className="container">
         <input
           type="text"
           className="login-input p-3 form-control mt-8"
@@ -46,13 +46,18 @@ export const Login = () => {
         />
         <button
           type="submit"
-          className="login-button mb-2 mt-3"
+          className="reg-btn btn-grad mb-2 mt-3"
           onClick={() => {
             userLogin();
           }}
         >
           Login
         </button>
+        <Link to="/register">
+        <button type="submit" className="reg-btn btn-grad mb-2 mt-3">
+          Register
+        </button>
+        </Link>
       </div>
     </div>
   );

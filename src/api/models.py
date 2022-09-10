@@ -20,8 +20,6 @@ class User(db.Model):
         return{
             "id": self.id,
             "username": self.username,
-            "firstname": self.firstname,
-            "lastname": self.lastname,
             "email": self.email
         }
         
