@@ -152,7 +152,7 @@ export const FormPage = () => {
         </label>
         <input type="file" className="form-control  btn my-3" id="customFile" />
         <div>
-          <button onClick={onsubmit} className="btn my-3">
+          <button onClick={onsubmit} className="btn my-3 reg-btn btn-grad">
             Submit
           </button>
         </div>
