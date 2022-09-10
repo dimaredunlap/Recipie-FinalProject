@@ -1,7 +1,7 @@
 
 import os
 import sys
-from sqlalchemy import Column, ForeignKey, Integer, String, Boolean,Text
+from sqlalchemy import Column, ForeignKey, String, Boolean,Text, Integer
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
@@ -29,20 +29,28 @@ class Recipe(db.Model):
     user = relationship(User)
     user_id = Column(Integer, ForeignKey('user.id'))
     title = Column(String, nullable=False, unique=True)
-    description = Column(String, nullable=False)
-    servings = Column(String, nullable=False, unique=True)
-    ingredients = Column(String, nullable=False, unique=True)
+    # description = Column(String, nullable=False)
+    servings = Column(String, nullable=False)
+    prep_time = Column(String, nullable=False)
+    cook_time = Column(String, nullable=False)
+    total_time = Column(String, nullable=False)
+    ingredients = Column(String, nullable=False)
     directions = Column(String, nullable=False, unique=True)
+    category = Column(String, nullable=False)
     credit = Column(String)
     
     def serialize(self):
         return{
             "id": self.id,
             "title": self.title,
-            "description": self.description,
+            # "description": self.description,
             "servings": self.servings,
+            "prep_time": self.prep_time,
+            "cook_time": self.cook_time,
+            "total_time": self.total_time,
             "ingredients": self.ingredients,
             "directions": self.directions,
+            "category": self.category,
             "credit": self.credit,
             "user_id": self.user_id,
         }
