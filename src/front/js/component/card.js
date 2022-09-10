@@ -29,7 +29,7 @@ export const Card = (props) => {
               nisi ut aliquip ex ea commodo consequat.
             </div>
             <div className="projcard-tagbox">
-              <i className="bi bi-heart"></i>
+              <button className="bi bi-heart"></button>
             </div>
           </div>
         </div>
