@@ -3,6 +3,14 @@ import { useState } from "react";
 import "../../styles/form.css"
 export  const FormPage = () => {
   const [title, setTitle] = useState('')
+  const [servings, setServings] = useState('')
+  const [ingredients, setIngredients] = useState('')
+  const [directions, setDirections] = useState('')
+  const [prep, setPrep] = useState('')
+  const [cook, setCook] = useState('')
+  const [total, setTotal] = useState('')
+  const [credit, setCredit] = useState('')
+
 
   function onsubmit() {
     
@@ -23,37 +31,37 @@ export  const FormPage = () => {
 
             <div class="nos">
               <label for="servings">Number of Servings:</label>
-              <input class="form-control input-sm" id="servings" type="text" />
+              <input onChange={(e) => setServings(e.target.value)} class="form-control input-sm" id="servings" type="text" />
             </div>
 
             <div class="ing">
               <label for="ingre">Ingredients:</label>
-              <textarea class="form-control input-sm" id="ingre" rows="3" type="textarea" />
+              <textarea onChange={(e) => setIngredients(e.target.value)} class="form-control input-sm" id="ingre" rows="3" type="textarea" />
             </div>
 
             <div class="direct">
               <label for="directions">Directions:</label>
-              <textarea class="form-control input-sm" id="directions" rows="3" type="textarea" />
+              <textarea onChange={(e) => setDirections(e.target.value)} class="form-control input-sm" id="directions" rows="3" type="textarea" />
             </div>
 
             <div class="preptime">
               <label for="preptime">Prep Time:</label>
-              <input class="form-control input-sm" id="preptime" type="text" />
+              <input onChange={(e) => setPrep(e.target.value)} class="form-control input-sm" id="preptime" type="text" />
             </div>
 
             <div class="cooktime">
               <label for="cooktime">Cook time:</label>
-              <input class="form-control input-sm" id="cooktime" type="text" />
+              <input onChange={(e) => setCook(e.target.value)} class="form-control input-sm" id="cooktime" type="text" />
             </div>
 
             <div class="totaltime">
               <label for="totaltime">Total Time:</label>
-              <input class="form-control input-sm" id="totaltime" type="text" />
+              <input onChange={(e) => setTotal(e.target.value)} class="form-control input-sm" id="totaltime" type="text" />
             </div>
 
             <div class="credit">
               <label for="credit">Credit:</label>
-              <input class="form-control input-sm" id="credit" type="text" />
+              <input onChange={(e) => setCredit(e.target.value)} class="form-control input-sm" id="credit" type="text" />
             </div>
 
             <div>

@@ -1,26 +1,20 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			message: null,
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			red: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
+			getRecipie: () => {
+				fetch("https://3001-tysonr0319-recipiefinal-c2jr55edypq.ws-us64.gitpod.io/api/recipe", {
+					method: "GET",
+					headers: {"Content-Type": "application/json"}
 
+				})
+				.then((response)=>response.json())
+				.then((result)=>setStore({red: result}))
+				.catch((error)=>console.log("error", error))
+			},
 			getMessage: async () => {
 				try{
 					// fetching data from the backend

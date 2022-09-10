@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./View/home";
-
+import { Glist } from "./View/grocerylist.js"
 import {FormPage} from "./View/form"
 import { Register } from "./View/register.js";
 import { Login } from "./View/login.js";
@@ -29,6 +29,7 @@ const Layout = () => {
             <Route element={<Login />} path="/login" />
             <Route element={<Favorite />} path="/favorite" />
             <Route element={<h1>Not found!</h1>} />
+            <Route element={<Glist />} path="/list" />
           </Routes>
         </ScrollToTop>
       </BrowserRouter>
