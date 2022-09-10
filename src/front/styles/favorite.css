@@ -19,17 +19,17 @@
 .card-footer{
     background-color: var(--Mint);
 }
-.btn{
+.btn-fav{
     background-color: var(--Dark-bg);
     border: 1px, solid, var(--Dark-bg);
     border-radius: 30px;
 }
-.btn:hover{
+.btn-fav:hover{
     background-color: var(--Dark-Mint);
     border:1px, solid, var(--Dark-Mint);
 
 }
-.btn:visited{
+.btn-fav:visited{
     background-color: var(--Dark-Mint);
     border:1px, solid, var(--Dark-Mint);
     outline: 3px, var(--Dark-bg);

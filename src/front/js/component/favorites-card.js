@@ -10,7 +10,7 @@ export const FavCard= () => {
                 <h5 class="card-title pt-3">Card title</h5>
                     <p class="card-text px-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur placeat optio pariatur maxime nesciunt magni vero temporibus.</p>
                 <div class="card-footer">
-                        <a href="#" class="btn btn-primary">Go to Recipie!</a>
+                        <a href="#" class="btn btn-fav btn-primary">Go to Recipie!</a>
                 </div>
             </div>
         </div>
