@@ -4,19 +4,14 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./View/home";
 
-import {FormPage} from "./View/form"
+import { FormPage } from "./View/form";
 import { Register } from "./View/register.js";
 import { Login } from "./View/login.js";
 import { Navbar } from "./component/navbar";
 import injectContext from "./store/appContext";
 
 import { Favorite } from "./View/favorite.js";
-import { Breakfast } from "./View/breakfast";
-import { Lunch } from "./View/lunch";
-import { Dinner } from "./View/dinner";
-import { Dessert } from "./View/dessert";
-import { Snacks } from "./View/snacks";
-import { Drinks } from "./View/drinks";
+import { MealType } from "./View/mealType.js";
 
 //create your first component
 const Layout = () => {
@@ -35,12 +30,7 @@ const Layout = () => {
             <Route element={<Register />} path="/register" />
             <Route element={<Login />} path="/login" />
             <Route element={<Favorite />} path="/favorite" />
-            <Route element={<Breakfast />} exact path="/breakfast" />
-            <Route element={<Lunch />} exact path="/lunch" />
-            <Route element={<Dinner />} exact path="/dinner" />
-            <Route element={<Dessert />} exact path="/dessert" />
-            <Route element={<Snacks />} exact path="/snacks" />
-            <Route element={<Drinks />} exact path="/drinks" />
+            <Route element={<MealType />} exact path="/mealType" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>
