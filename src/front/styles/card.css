@@ -33,7 +33,7 @@ body {
   font-size: 18px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 4px 21px -12px rgb(224, 103, 103);
+  box-shadow: 0 4px 21px -12px rgb(224, 103, 133);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .projcard:hover {
