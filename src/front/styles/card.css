@@ -33,11 +33,11 @@ body {
   font-size: 18px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  box-shadow: 0 4px 21px -12px rgb(224, 103, 103);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .projcard:hover {
-  box-shadow: 0 34px 32px -33px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 34px 32px -33px rgba(39, 245, 118, 0.699);
   transform: translate(0px, -3px);
 }
 .projcard::before {
@@ -151,13 +151,16 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.projcard-tagbox {
+button {
   position: absolute;
   bottom: 3%;
-  font-size: 14px;
+  font-size: 20px;
   cursor: default;
   user-select: none;
   pointer-events: none;
+  border: none;
+  background-color: transparent;
+  float: right;
 }
 .projcard-tag {
   display: inline-block;

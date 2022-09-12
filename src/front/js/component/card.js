@@ -4,8 +4,6 @@ import { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/card.css";
 
-
-
 export const Card = (props) => {
   const [favorite, setFavorite] = useState([]);
   return (
@@ -28,7 +26,7 @@ export const Card = (props) => {
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
               nisi ut aliquip ex ea commodo consequat.
             </div>
-            <div className="projcard-tagbox">
+            <div>
               <button className="bi bi-heart"></button>
             </div>
           </div>
