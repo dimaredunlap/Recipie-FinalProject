@@ -27,7 +27,7 @@ export const Card = (props) => {
               nisi ut aliquip ex ea commodo consequat.
             </div>
             <div>
-              <button className="bi bi-heart"></button>
+              <button id="heart" className="bi bi-heart"></button>
             </div>
           </div>
         </div>

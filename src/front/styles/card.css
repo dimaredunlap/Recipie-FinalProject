@@ -151,16 +151,16 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-button {
-  position: absolute;
-  bottom: 3%;
+#heart {
+  position: absolute !important;
+  bottom: 3% !important;
   font-size: 20px;
   cursor: default;
   user-select: none;
   pointer-events: none;
   border: none;
   background-color: transparent;
-  float: right;
+  float: right !important;
 }
 .projcard-tag {
   display: inline-block;
