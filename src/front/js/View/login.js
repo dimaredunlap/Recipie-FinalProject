@@ -9,6 +9,7 @@ let password = "";
 
 export const Login = () => {
   let navigate = useNavigate();
+  const {actions} = useContext(Context);
 
   const userLogin = async () => {
     try {
@@ -19,6 +20,8 @@ export const Login = () => {
       const response = await LoginUser(user);
       const data = await response.json();
       if (response.status === 200) {
+        actions.setToken(data)
+        console.log(data);
         localStorage.setItem("token", data);
       }
     } catch (err) {

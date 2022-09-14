@@ -11,7 +11,7 @@ export const Home = () => {
 
   return (
     <div className="container text-center mt-5">
-      <Carousel />
+      <Carousel  />
       <h2>Featured</h2>
       <SmallCarousel />
       <h2>Featured</h2>
