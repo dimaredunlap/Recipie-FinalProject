@@ -1,22 +1,15 @@
-import React, {useContext, useState} from 'react'
-import { Context } from '../store/appContext'
+import React, { useContext, useState } from "react";
+import { Context } from "../store/appContext";
+import { SelectedIngredients } from "../component/selectedIngredients";
 
-export const Glist=()=> {
-    const {store, actions} = useContext(Context)
-    console.log(store)
+export const Glist = () => {
+  let ingredients=["onions","cheese","meat","bun"]
   return (
-    <>
-    <div className="container">
-        {store.red.map((item, index)=>{
-            return(
-                <div><input type="checkbox"/>{item.ingredients}</div>
-                    
-            )
-        })}
-      
-      
+    <div>
+      <h1>
+        List 
+      </h1>
+      <SelectedIngredients ingredients={ingredients}/>
     </div>
-    </>
-  )
-}
-
+  );
+};
