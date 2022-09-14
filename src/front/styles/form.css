@@ -15,7 +15,7 @@ h1 {
   background-color: var(--Light-bg);
   border-radius: 25px;
 }
-.reg-btn {
+.form-btn {
   color: var(--Light-tx-color);
   margin-right: 20px;
   background-color: var(--Dark-bg);
@@ -38,7 +38,7 @@ h1 {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-.reg-btn:hover {
+.form-btn:hover {
   color: var(--Light-bg);
   background-position: 100% 0;
   moz-transition: all 0.4s ease-in-out;

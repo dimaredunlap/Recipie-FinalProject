@@ -49,7 +49,7 @@ export const Login = () => {
         />
         <button
           type="submit"
-          className="reg-btn btn-grad mb-2 mt-3"
+          className="log-btn btn-grad mb-2 mt-3"
           onClick={() => {
             userLogin();
           }}
@@ -57,7 +57,7 @@ export const Login = () => {
           Login
         </button>
         <Link to="/register">
-        <button type="submit" className="reg-btn btn-grad mb-2 mt-3">
+        <button type="submit" className="log-btn btn-grad mb-2 mt-3">
           Register
         </button>
         </Link>
