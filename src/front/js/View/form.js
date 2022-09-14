@@ -1,6 +1,8 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext} from "react";
 import "../../styles/form.css";
+import { Context } from "../store/appContext";
+
 export const FormPage = () => {
   const [title, setTitle] = useState("");
   const [servings, setServings] = useState("");
@@ -11,6 +13,7 @@ export const FormPage = () => {
   const [totalTime, setTotalTime] = useState("");
   const [mealType, setMealType] = useState("");
   const [credit, setCredit] = useState("");
+  const {actions} = useContext(Context);
 
   function onsubmit() {
     fetch(`${process.env.BACKEND_URL}/api/recipe`, {
@@ -28,7 +31,11 @@ export const FormPage = () => {
         directions: directions,
         category: mealType,
       }),
-    });
+    }) 
+    .then((res) => res.json())
+    .then((res) => {
+      actions.setRecipes(res);
+    })
   }
   return (
     <div className="container form mt-5">
