@@ -2,7 +2,7 @@ import React from 'react'
 import "../../styles/favorite.css"
 import {FavCard} from "../component/favorites-card"
 
-function Favorite() {
+export const Favorite = () => {
   return (
     <>
     <div className="container">
@@ -33,4 +33,3 @@ function Favorite() {
   )
 }
 
-export default Favorite

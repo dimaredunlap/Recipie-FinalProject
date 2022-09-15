@@ -1,8 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext} from "react";
 import "../../styles/form.css";
+import { Context } from "../store/appContext";
+
 export const FormPage = () => {
   const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [servings, setServings] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [directions, setDirections] = useState("");
@@ -11,6 +14,7 @@ export const FormPage = () => {
   const [totalTime, setTotalTime] = useState("");
   const [mealType, setMealType] = useState("");
   const [credit, setCredit] = useState("");
+  const {actions} = useContext(Context);
 
   function onsubmit() {
     fetch(`${process.env.BACKEND_URL}/api/recipe`, {
@@ -20,6 +24,7 @@ export const FormPage = () => {
       },
       body: JSON.stringify({
         title: title,
+        description: description,
         servings: servings,
         prep_time: prepTime,
         cook_time: cookTime,
@@ -28,7 +33,11 @@ export const FormPage = () => {
         directions: directions,
         category: mealType,
       }),
-    });
+    }) 
+    .then((res) => res.json())
+    .then((res) => {
+      actions.setRecipes(res);
+    })
   }
   return (
     <div className="container form mt-5">
@@ -46,6 +55,18 @@ export const FormPage = () => {
             className="form-control input-sm"
             id="rtitle"
             type="text"
+          />
+        </div>
+
+        <div className="descrip">
+          <label htmlFor="description">Description:</label>
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="form-control input-sm"
+            id="description"
+            rows="3"
+            type="textarea"
           />
         </div>
 
