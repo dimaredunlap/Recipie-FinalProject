@@ -6,17 +6,17 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Card } from "../component/card.js";
 
-export const MealType = () => {
+export const MealType = (props) => {
   const { store, actions } = useContext(Context);
 
   return (
     <div className="text-center mt-5">
-      <h1>Drinks</h1>
+      <h1>{props.title}</h1>
       <p> Last call! </p>
       <Row className="container">
-        {Array.from({ length: 4 }).map((_, idx) => (
+        {props.mtype.map((recipe, idx) => (
           <Col xs={12} className="container my-3">
-            <Card />
+            <Card key={idx} recipe={recipe}/>
           </Col>
         ))}
       </Row>

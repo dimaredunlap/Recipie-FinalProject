@@ -15,10 +15,7 @@ export const Card = (props) => {
             src="https://picsum.photos/800/600?image=1041"
           />
           <div className="projcard-textbox">
-            <div className="projcard-title">Card Title</div>
-            <div className="projcard-subtitle">
-              This explains the card in more detail
-            </div>
+            <div className="projcard-title">{props.recipe.title}</div>
             <div className="projcard-bar"></div>
             <div className="projcard-description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
