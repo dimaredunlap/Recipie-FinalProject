@@ -12,7 +12,6 @@ export const MealType = (props) => {
   return (
     <div className="text-center mt-5">
       <h1>{props.title}</h1>
-      <p> Last call! </p>
       <Row className="container">
         {props.mtype.map((recipe, idx) => (
           <Col xs={12} className="container my-3">

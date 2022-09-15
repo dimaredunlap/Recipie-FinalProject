@@ -22,7 +22,11 @@ const Layout = () => {
   const {store, actions} = useContext(Context)
     let snacks = store.recipes.filter((recipe) => recipe.category === "snacks")
     let dinner = store.recipes.filter((recipe) => recipe.category === "dinner")
-    console.log(dinner)
+    let breakfast = store.recipes.filter((recipe) => recipe.category === "breakfast")
+    let lunch = store.recipes.filter((recipe) => recipe.category === "lunch")
+    let dessert = store.recipes.filter((recipe) => recipe.category === "dessert")
+    let drinks = store.recipes.filter((recipe) => recipe.category === "drinks")
+
   return (
     <div>
       <BrowserRouter basename={basename}>
@@ -35,11 +39,11 @@ const Layout = () => {
             <Route element={<Login />} path="/login" />
             <Route element={<Favorite />} path="/favorite" />
             <Route element={<MealType title="Snacks" mtype={snacks} />} exact path="/snacks" />
-            <Route element={<MealType />} exact path="/breakfast" />
-            <Route element={<MealType />} exact path="/lunch" />
+            <Route element={<MealType title="Breakfast" mtype={breakfast}/>} exact path="/breakfast" />
+            <Route element={<MealType title="Lunch" mtype={lunch}/>} exact path="/lunch" />
             <Route element={<MealType title="Dinner" mtype={dinner}/>} exact path="/dinner" />
-            <Route element={<MealType />} exact path="/dessert" />
-            <Route element={<MealType />} exact path="/drinks" />
+            <Route element={<MealType title="Dessert" mtype={dessert}/>} exact path="/dessert" />
+            <Route element={<MealType title="Drinks" mtype={drinks}/>} exact path="/drinks" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>
