@@ -29,7 +29,7 @@ class Recipe(db.Model):
     user = relationship(User)
     user_id = Column(Integer, ForeignKey('user.id'))
     title = Column(String, nullable=False, unique=True)
-    # description = Column(String, nullable=False)
+    description = Column(String, nullable=False)
     servings = Column(String, nullable=False)
     prep_time = Column(String, nullable=False)
     cook_time = Column(String, nullable=False)
@@ -43,7 +43,7 @@ class Recipe(db.Model):
         return{
             "id": self.id,
             "title": self.title,
-            # "description": self.description,
+            "description": self.description,
             "servings": self.servings,
             "prep_time": self.prep_time,
             "cook_time": self.cook_time,

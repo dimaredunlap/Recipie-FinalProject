@@ -83,6 +83,7 @@ def post_recipe():
     recipe = Recipe()
     try:
         recipe.title = recipe_dictionary['title']
+        recipe.description = recipe_dictionary['description']
         recipe.servings = recipe_dictionary['servings']
         recipe.prep_time = recipe_dictionary['prep_time']
         recipe.cook_time = recipe_dictionary['cook_time']
