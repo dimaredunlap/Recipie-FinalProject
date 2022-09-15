@@ -17,12 +17,7 @@ export const Card = (props) => {
           <div className="projcard-textbox">
             <div className="projcard-title">{props.recipe.title}</div>
             <div className="projcard-bar"></div>
-            <div className="projcard-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </div>
+            <div className="projcard-description">{props.recipe.description}</div>
             <div>
               <button id="heart" className="bi bi-heart"></button>
             </div>
