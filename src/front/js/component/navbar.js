@@ -46,14 +46,24 @@ export const Navbar = () => {
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">Meal Types</a>
             <ul className="dropdown-menu">
-              <Link to="/"className="link" >
+              <Link to="/breakfast"className="link" >
               <li className="dropdown-item link-item">Breakfast</li>
               </Link>
+              <Link to="/lunch" className="link" >
               <li className="dropdown-item">Lunch</li>
+              </Link> 
+              <Link to="/dinner" className="link" >
               <li className="dropdown-item">Dinner</li>
+              </Link>
+              <Link to="/dessert" className="link" >
               <li className="dropdown-item">Desserts</li>
+              </Link>
+              <Link to="/drinks" className="link" >
               <li className="dropdown-item">Drinks</li>
+              </Link>
+              <Link to="/snacks" className="link" >
               <li className="dropdown-item">Snacks</li>
+              </Link>
             </ul>
           </li>
           <li className="nav-item dropdown">
