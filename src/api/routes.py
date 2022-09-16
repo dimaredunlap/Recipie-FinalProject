@@ -206,9 +206,9 @@ def login_user():
     else:
         return jsonify('Error user not exist'), 401
 
-@api.route('/private',methods=["GET"])
-@jwt_required()
-def private():
-    user_token=get_jwt_identity()
-    user=User.query.get(user_token)
-    return jsonify(user.serialize()),200
+# @api.route('/private',methods=["GET"])
+# @jwt_required()
+# def private():
+#     user_token=get_jwt_identity()
+#     user=User.query.get(user_token)
+#     return jsonify(user.serialize()),200
