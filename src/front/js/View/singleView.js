@@ -52,9 +52,9 @@ export const SingleView = () => {
           className="photo"
           src="https://www.apinchofhealthy.com/wp-content/uploads/2021/09/Close-up-side-shot-of-styled-sandwich-2.jpg"
         ></img>
-        <h2 className="ingredients">Ingredients</h2>
+        <h2 className="ingredients">Ingredients {recipe.ingredients}</h2>
         <div className="col-sm-3 align-self-start">
-          <h2 className="directions">Directions</h2>
+          <h2 className="directions">Directions {recipe.directions}</h2>
         </div>
       </div>
     </div>
