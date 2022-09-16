@@ -198,7 +198,7 @@ def signup_user():
 @api.route('/login', methods=['POST'])
 def login_user():
     body = request.get_json(force=True)
-    user = db.session.query(User).filter(User.email == body['email']).first()
+    user = db.session.query(User).filter(User.username == body['username']).first()
     print(user.password)
     if user.password == body['password']:
         access_token = create_access_token(identity={'id': user.id})

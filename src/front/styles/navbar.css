@@ -20,8 +20,8 @@
   padding-bottom: 0px !important;
 }
 .logo {
-  width: 150px;
-  margin-top: 80px;
+  max-width: 150px;
+  
 }
 
 .login {
@@ -38,7 +38,7 @@
   border: 1px solid var(--Dark-bg);
 }
 .search {
-  width: 400px;
+  max-width: 400px;
   border-radius: 20px;
   border-style: hidden;
 }
@@ -52,4 +52,7 @@
 }
 .dropdown-item:hover {
   background-color: var(--Mint);
+}
+li{
+  list-style-type: none;
 }

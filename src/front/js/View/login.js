@@ -4,17 +4,18 @@ import { LoginUser } from "../Request/user.js";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import "../../styles/login.css";
 
-let email = "";
-let password = "";
+
 
 export const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   let navigate = useNavigate();
   const {actions} = useContext(Context);
 
   const userLogin = async () => {
     try {
       const user = {
-        email: email,
+        username: username,
         password: password,
       };
       const response = await LoginUser(user);
@@ -37,15 +38,17 @@ export const Login = () => {
       <div className="container">
         <input
           type="text"
+          value={username}
           className="login-input p-3 form-control mt-8"
-          placeholder="Email"
-          onChange={(e) => (email = e.target.value.toLowerCase())}
+          placeholder="Username"
+          onChange={(e) => setUsername(e.target.value)}
         />
         <input
+        value={password}
           type="password"
           className="login-input p-3 mb-2 mt-3 form-control"
           placeholder="Password"
-          onChange={(e) => (password = e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <button
           type="submit"
