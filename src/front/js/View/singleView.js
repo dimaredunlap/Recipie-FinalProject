@@ -31,7 +31,7 @@ export const SingleView = () => {
         <div className="row mb-5 align-self-start" id="times">
           <div className="col-1 d-flex">
             <div className="prepTime">Prep Time</div>
-            <p> {recipe.prep_time}</p>
+            <p className="row"> {recipe.prep_time}</p>
             <span className="vertical-line"></span>
           </div>
           <div className="col-1 d-flex">
@@ -50,8 +50,8 @@ export const SingleView = () => {
           </div>
         </div>
       </div>
-      <div className="row g-3" id="recipeBox">
-        <div className="col-sm-3 align-self-start"></div>
+      <div className="row mb-5 align-self-start" id="recipeBox">
+        <div></div>
         <img
           className="photo"
           src="https://www.apinchofhealthy.com/wp-content/uploads/2021/09/Close-up-side-shot-of-styled-sandwich-2.jpg"
