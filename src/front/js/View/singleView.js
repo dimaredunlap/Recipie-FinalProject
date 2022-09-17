@@ -3,10 +3,13 @@ import Col from "react-bootstrap/Col";
 import { Context } from "../store/appContext";
 import "../../styles/singleView.css";
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
 
 export const SingleView = () => {
   const id = useParams().id;
   const [recipe, setRecipe] = useState(null);
+  const [store, actions] =useContext(Context);
+  const [checked, setChecked] = React.useState(false);
 
   useEffect(() => {
     fetch(`${process.env.BACKEND_URL}/api/recipe/${id}`, {
@@ -19,6 +22,14 @@ export const SingleView = () => {
       })
       .catch((error) => console.log(error));
   }, []);
+
+
+  const handleChange = () => {
+    setChecked(!checked);
+    if (checked === true){
+      actions.setIngridientList(e.target.value);
+    }
+  };
 
   return recipe == null ? (
     "loading"
@@ -63,7 +74,11 @@ export const SingleView = () => {
               return (
                 <li key={ingredient}>
                   <label for={ingredient}> {ingredient} </label>
-                  <input type="checkbox" id="ingredient"></input>
+                  <input 
+                  type="checkbox" 
+                  id="ingredient"
+                  value={checked}
+                  onChange={handleChange}></input>
                 </li>
               );
             })}
