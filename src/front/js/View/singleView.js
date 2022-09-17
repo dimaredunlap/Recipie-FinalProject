@@ -58,8 +58,17 @@ export const SingleView = () => {
         ></img>
         <div>
           <h2 className="ingredients">Ingredients</h2>
-          <p>{recipe.ingredients}</p>
-        </div>  
+          <ul>
+            {recipe.ingredients.split(",").map((ingredient) => {
+              return (
+                <li key={ingredient}>
+                  <label for={ingredient}> {ingredient} </label>
+                  <input type="checkbox" id="ingredient"></input>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
         <div className="col-sm-3 align-self-start">
           <h2 className="directions">Directions</h2>
           <p>{recipe.directions}</p>
