@@ -14,6 +14,11 @@ const getState = ({
 					token: token
 				});
 			},
+			removeToken: () => {
+				setStore({
+					token: null
+				});
+			},	
 			getAllRecipes: () => {
 				fetch(`${process.env.BACKEND_URL}/api/recipe`, {
 						method: 'GET',

@@ -4,7 +4,7 @@ import "../../styles/carouselCard.css";
 function CarouselCard() {
   return (
     
-            <div className="col-3 small-card-container">
+            <div className="col-8 col-md-6 col-lg-4 me-lg-3 col-xl-3 me-xl-5 me-xxl-2 small-card-container">
                 <div className="card small-card">
                     <img src="https://via.placeholder.com/150" className="card-img-top small-img" alt=""></img>
                     <div className="card-body  small-card-body">

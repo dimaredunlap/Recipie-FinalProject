@@ -18,6 +18,9 @@ export const Navbar = () => {
   function navToHome() {
     navigate("/home");
   }
+   function logout() {
+     actions.removeToken();
+   }
   return (
     <>
       <nav
@@ -40,7 +43,7 @@ export const Navbar = () => {
             </div> */}
 
           {/* Nav bar drop down */}
-          <div class="d-flex align-items-center">
+          <div className="d-flex align-items-center">
           <ul id="navbarTogglerDemo02"className=" navbar-nav justify-content-evenly  ">
                 <li className="nav-item dropdown">
                   <a
@@ -100,7 +103,7 @@ export const Navbar = () => {
                 <ul className="dropdown-menu dropdown-menu-end">
                   <li className="dropdown-item">Grocery list</li>
                   <li className="dropdown-item">Favorites</li>
-                  <button className="dropdown-item">logout</button>
+                  <button onClick={logout} className="dropdown-item">logout</button>
                 </ul>
                 </div>
                 </>
