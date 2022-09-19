@@ -1,22 +1,18 @@
 import React from 'react'
 import CarouselCard from './carousel-card'
 import "../../styles/smallCarousel.css";
-function SmallCarousel() {
+import { useContext } from 'react';
+import { Context } from '../store/appContext';
+function SmallCarousel(props) {
+  const { store , actions} = useContext(Context)
   return (
     <div className="container small-carousel">
         <div className="row small-carousel-container ">
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
-            <CarouselCard />
+            {props.routePath.map((result) => {
+              return(
+                <CarouselCard key={result.id} routePath={props.routePath} tittle={result.tittle} id={result.id} description={result.description} />
+              )
+            })}
         </div>
     </div>
   )
