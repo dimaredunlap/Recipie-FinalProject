@@ -25,16 +25,16 @@ export const Navbar = () => {
     <>
       <nav
         id="navbar"
-        className="navbar fixed-top navbar-expand-lg d-flex justify-content-center flex-row "
+        className="navbar fixed-top navbar-expand-lg d-flex justify-content-center flex-row pt-0"
       >
-        <div className="container-md mt-lg-5 flex-row justify-content-start justify-content-sm-evenly">
+        <div className="container-md mt-lg-5 flex-row justify-content-start justify-content-sm-evenly ">
         <Link to="/">
-            <img className="logo navbar-brand" src={logo}></img>
+            <img className="logo navbar-brand mt-4" src={logo}></img>
           </Link>
 
           {/* Search bar */}
           <input
-            className="search ms-md-2 flex-grow-0 flex-sm-grow-1 me-3 me-sm-5 me-md-5"
+            className="search ms-md-2 flex-grow-0 flex-sm-grow-1 me-3 me-sm-5 me-md-5 mb-4"
             type="text"
             placeholder="Search.."
           ></input>
@@ -43,7 +43,7 @@ export const Navbar = () => {
             </div> */}
 
           {/* Nav bar drop down */}
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center mb-4">
           <ul id="navbarTogglerDemo02"className=" navbar-nav justify-content-evenly  ">
                 <li className="nav-item dropdown">
                   <a

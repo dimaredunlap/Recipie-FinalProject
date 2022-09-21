@@ -9,7 +9,7 @@ function CarouselCard(props) {
                 <div className="card small-card">
                     <img src="https://via.placeholder.com/150" className="card-img-top small-img" alt=""></img>
                     <div className="card-body  small-card-body">
-                        <p className="h2">{props.tittle}</p>
+                        <p className="h1">{props.title}</p>
                         <p className='p-small-card'>{props.description}</p>
                          <Link to={`/singleview/${props.id}`} >
                         <a href="/" className="btn btn-small reg-btn btn-grad">Check recipe out!</a>

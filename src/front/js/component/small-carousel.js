@@ -10,7 +10,7 @@ function SmallCarousel(props) {
         <div className="row small-carousel-container ">
             {props.routePath.map((result) => {
               return(
-                <CarouselCard key={result.id} routePath={props.routePath} tittle={result.tittle} id={result.id} description={result.description} />
+                <CarouselCard key={result.id} routePath={props.routePath} title={result.title} id={result.id} description={result.description} />
               )
             })}
         </div>
