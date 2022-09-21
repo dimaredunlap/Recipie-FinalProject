@@ -33,39 +33,38 @@ export const SingleView = () => {
     "loading"
   ) : (
     <div className="singleView container">
-      <div id="introBox">
+      <div id="introBox" className="container">
         <div className="title font-weight-bold">{recipe.title}</div>
         <p className="author">{recipe.credit}</p>
         <p className="description">{recipe.description}</p>
-        <div className="row mb-5 align-self-start" id="times">
-          <div className="col-1 d-flex">
+        <div className="row mb-5 align-self-start container" id="times">
+          <div className="col-3 d-flex">
             <div className="prepTime">Prep Time</div>
             <p className="row"> {recipe.prep_time}</p>
             <span className="vertical-line"></span>
           </div>
-          <div className="col-1 d-flex">
+          <div className="col-3 d-flex">
             <div className="cookTime">Cook Time</div>
             <p>{recipe.cook_time}</p>
             <span className="vertical-line"></span>
           </div>
-          <div className="col-1 d-flex">
+          <div className="col-3 d-flex">
             <div className="totalTime">Total Time</div>
             <p> {recipe.total_time}</p>
             <span className="vertical-line"></span>
           </div>
-          <div className="col-1 d-flex">
+          <div className="col-3 d-flex">
             <div className="servings">Servings </div>
             <p>{recipe.servings}</p>
           </div>
         </div>
       </div>
       <div className="row mb-5 align-self-start" id="recipeBox">
-        <div></div>
         <img
-          className="photo"
+          className="photo col-6"
           src="https://www.apinchofhealthy.com/wp-content/uploads/2021/09/Close-up-side-shot-of-styled-sandwich-2.jpg"
         ></img>
-        <div>
+        <div className="col-3">
           <h2 className="ingredients">Ingredients</h2>
           <ul>
             {recipe.ingredients.split(",").map((ingredient) => {
@@ -82,7 +81,7 @@ export const SingleView = () => {
             })}
           </ul>
         </div>
-        <div className="col-sm-3 align-self-start">
+        <div className="col-sm-3 col-3 align-self-start">
           <h2 className="directions">Directions</h2>
           <p>{recipe.directions}</p>
         </div>
