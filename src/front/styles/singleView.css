@@ -13,7 +13,7 @@
 }
 #recipeBox {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .vertical-line {
   display: inline-block;
