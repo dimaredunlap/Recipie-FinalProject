@@ -22,6 +22,7 @@
 .logo {
   width: 150px;
   margin-top: 80px;
+  text-shadow: 0 0 100px rgb(251, 0, 255); 
 }
 
 .login {
