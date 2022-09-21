@@ -12,6 +12,7 @@ import injectContext from "./store/appContext";
 
 import { Favorite } from "./View/favorite.js";
 import { MealType } from "./View/mealType.js";
+import { SingleView } from "./View/singleView.js";
 
 //create your first component
 const Layout = () => {
@@ -38,6 +39,7 @@ const Layout = () => {
             <Route element={<Register />} path="/register" />
             <Route element={<Login />} path="/login" />
             <Route element={<Favorite />} path="/favorite" />
+            <Route element={<SingleView />} path="/singleview/:id" />
             <Route element={<MealType title="Snacks" mtype={snacks} />} exact path="/snacks" />
             <Route element={<MealType title="Breakfast" mtype={breakfast}/>} exact path="/breakfast" />
             <Route element={<MealType title="Lunch" mtype={lunch}/>} exact path="/lunch" />

@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			recipes: [],
+			ingridientList: [],
 		
 		},
 		actions: {
@@ -17,6 +18,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			setRecipes: (recipeList) => {
 				setStore({recipes: recipeList});
+			},
+			setIngridientList: (ingredient) => {
+				setStore({ingredientList: ingredient});
 			}
 		}
 	};
