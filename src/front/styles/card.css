@@ -10,12 +10,27 @@ body {
 }
 .projcard-container {
   margin: 50px 0;
+
+}
+#heart {
+  position: absolute !important;
+  justify-content: space-evenly;
+  bottom: 3% !important;
+  font-size: 20px;
+  cursor: default;
+  user-select: none;
+  pointer-events: none;
+  border: none;
+  background-color: transparent;
+  float: right !important;
 }
 
 /* Actual Code: */
 .projcard-container,
 .projcard-container * {
   box-sizing: border-box;
+  justify-content: center;
+
 }
 .projcard-container {
   margin-left: auto;
@@ -150,17 +165,6 @@ body {
   height: 125px;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-#heart {
-  position: absolute !important;
-  bottom: 3% !important;
-  font-size: 20px;
-  cursor: default;
-  user-select: none;
-  pointer-events: none;
-  border: none;
-  background-color: transparent;
-  float: right !important;
 }
 .projcard-tag {
   display: inline-block;
