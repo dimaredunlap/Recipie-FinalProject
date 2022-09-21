@@ -8,8 +8,8 @@ import { useContext } from "react";
 export const SingleView = () => {
   const id = useParams().id;
   const [recipe, setRecipe] = useState(null);
-  const [store, actions] =useContext(Context);
-  const [checked, setChecked] = React.useState(false);
+  const { store, actions } =useContext(Context);
+  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     fetch(`${process.env.BACKEND_URL}/api/recipe/${id}`, {
@@ -24,13 +24,11 @@ export const SingleView = () => {
   }, []);
 
 
-  const handleChange = () => {
-    setChecked(!checked);
-    if (checked === true){
-      actions.setIngridientList(e.target.value);
-    }
+  const handleChange = (event) => {
+    
   };
-
+  console.log(`Event ${checked}`);
+  console.log(`List ${store.ingredientList}`);
   return recipe == null ? (
     "loading"
   ) : (
@@ -77,7 +75,7 @@ export const SingleView = () => {
                   <input 
                   type="checkbox" 
                   id="ingredient"
-                  value={checked}
+                  value={ingredient}
                   onChange={handleChange}></input>
                 </li>
               );
