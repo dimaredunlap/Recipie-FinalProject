@@ -39,30 +39,27 @@ export const SingleView = () => {
         <p className="author">{recipe.credit}</p>
         <p className="description">{recipe.description}</p>
         {/* start of the times boxes */}
-        <div className="grid mb-5 align-self-start container" id="times">
-          <div className="col-3 d-flex">
+        <div className="grid mb-5 align-self-start container row" id="times">
+          <div className="col-2 d-flex">
             <div className="timeTitle">Prep Time</div>
             <span className="vertical-line"></span>
             <p className="row"> {recipe.prep_time}</p>
           </div>
-          {/* <div className="col-3 d-flex">
+          <div className="col-2 d-flex">
             <div className="timeTitle">Cook Time</div>
             <span className="vertical-line"></span>
             <p className="row">{recipe.cook_time}</p>
           </div>
-          <div className="col-3 d-flex">
+          <div className="col-2 d-flex">
             <div className="timeTitle">Total Time</div>
             <span className="vertical-line"></span>
             <p className="row"> {recipe.total_time}</p>
           </div>
-          <div className="col-3 d-flex">
+          <div className="col-2 d-flex">
             <div className="timeTitle">Servings </div>
             <span className="vertical-line"></span>
             <p className="row">{recipe.servings}</p>
           </div>
-          <div>
-              <button id="heart" className="bi bi-heart "> Favorites</button>
-          </div> */}
         </div>
       </div>
       {/* This is the section with the image, ingredients and directions */}
