@@ -18,6 +18,7 @@
 #recipeBox {
   display: flex;
   justify-content: space-evenly;
+  padding-bottom: 200px;
 }
 .vertical-line {
   display: inline-block;
