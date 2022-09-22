@@ -45,7 +45,7 @@ export const SingleView = () => {
             <span className="vertical-line"></span>
             <p className="row"> {recipe.prep_time}</p>
           </div>
-          <div className="col-3 d-flex">
+          {/* <div className="col-3 d-flex">
             <div className="timeTitle">Cook Time</div>
             <span className="vertical-line"></span>
             <p className="row">{recipe.cook_time}</p>
@@ -62,15 +62,11 @@ export const SingleView = () => {
           </div>
           <div>
               <button id="heart" className="bi bi-heart "> Favorites</button>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* This is the section with the image, ingredients and directions */}
       <div className="row mb-5 align-self-start" id="recipeBox">
-        <img
-          className="photo col-6"
-          src="https://www.apinchofhealthy.com/wp-content/uploads/2021/09/Close-up-side-shot-of-styled-sandwich-2.jpg"
-        ></img>
         <div className="col-3">
           <h2 className="ingredients">Ingredients</h2>
           <ul>
@@ -100,6 +96,10 @@ export const SingleView = () => {
             })}
           </ol>
         </div>
+        <img
+          className="photo col-6"
+          src="https://www.apinchofhealthy.com/wp-content/uploads/2021/09/Close-up-side-shot-of-styled-sandwich-2.jpg"
+        ></img>
       </div>
     </div>
   );
