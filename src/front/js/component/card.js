@@ -6,6 +6,9 @@ import "../../styles/card.css";
 
 export const Card = (props) => {
   const [favorite, setFavorite] = useState([]);
+  function myFunction() {
+    x.classList.toggle("fa-thumbs-down");
+  }
   return (
     <div className="projcard-container">
       <div className="projcard projcard-blue">
@@ -18,9 +21,9 @@ export const Card = (props) => {
             <div className="projcard-title">{props.recipe.title}</div>
             <div className="projcard-bar"></div>
             <div className="projcard-description">{props.recipe.description}</div>
-            <div>
-              <button id="heart" className="bi bi-heart"></button>
-            </div>
+          </div>
+          <div>
+              <button id="heart" className="bi bi-heart" onclick="myFunction()"></button>
           </div>
         </div>
       </div>
