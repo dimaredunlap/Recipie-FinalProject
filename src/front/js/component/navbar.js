@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import "../../styles/navbar.css";
 import background from "../../img/layered-waves.jpg";
 import logo from "../../img/Foodgasm-logo.png";
 import moon from "../../img/Light-mode-moon.png";
-import { useNavigate, Link, NavLink } from "react-router-dom";
+import { useNavigate, Link, NavLink, Navigate } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = (props) => {
   let navigate = useNavigate();
   function navToReg() {
     navigate("/register");
@@ -16,6 +16,15 @@ export const Navbar = () => {
   function navToHome() {
     navigate("/home");
   }
+  const [inputValue, setInputValue] = useState ("")
+  const onSubmit = (onKeyDownEvent) => {
+    if (onKeyDownEvent.keyCode === 13) {
+      let newSearch = onKeyDownEvent.target.value;
+      props.setQuery(newSearch);
+      setInputValue("");
+      navigate ("/search")
+    }
+  };
   return (
     <>
       <nav
@@ -27,13 +36,15 @@ export const Navbar = () => {
           <Link to="/">
             <img className="logo" src={logo}></img>
           </Link>
-          <div className="glow"></div>
 
           {/* Search bar */}
           <input
             className="search ms-5"
             type="text"
             placeholder="Search.."
+            onKeyDown={onSubmit}
+            onChange={e => setInputValue(e.target.value)}
+		        value={inputValue}
           ></input>
           {/* Dark/Light mode button */}
           <div
