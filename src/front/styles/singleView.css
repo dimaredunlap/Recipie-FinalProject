@@ -33,6 +33,26 @@
  .servings {
    font-weight: bolder;
  }
-p{
-   
+ ol {
+  list-style: none; counter-reset: li
 }
+li::before {
+  content: counter(li); 
+  color: red;
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em
+}
+li {
+  counter-increment: li
+}
+/* ol li::before {
+  content: counter(li); 
+  color: red;
+  display: inline-block; 
+  width: 1em; 
+  margin-left: -1.5em;
+  margin-right: 0.5em; 
+  text-align: right; 
+  direction: rtl
+} */

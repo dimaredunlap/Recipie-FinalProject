@@ -70,12 +70,12 @@ export const SingleView = () => {
             {recipe.ingredients.split(",").map((ingredient) => {
               return (
                 <li key={ingredient}>
-                  <label for={ingredient}> {ingredient} </label>
                   <input 
                   type="checkbox" 
                   id="ingredient"
                   value={ingredient}
                   onChange={handleChange}></input>
+                  <label for={ingredient}> {ingredient} </label>
                 </li>
               );
             })}
@@ -83,7 +83,15 @@ export const SingleView = () => {
         </div>
         <div className="col-sm-3 col-3 align-self-start">
           <h2 className="directions">Directions</h2>
-          <li>{recipe.directions}</li>
+          <ol>
+            {recipe.directions.split(",").map((direction) => {
+              return (
+                <li key={direction}>
+                  <label for={direction}> {direction} </label>
+                </li>
+              );
+            })}
+          </ol>
         </div>
       </div>
     </div>
