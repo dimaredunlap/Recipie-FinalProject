@@ -6,7 +6,9 @@ const getState = ({
 	return {
 		store: {
 			token: null,
-			recipes: []
+			recipes: [],
+			ingridientList: [],
+		
 		},
 		actions: {
 			setToken: (token) => {
@@ -40,6 +42,8 @@ const getState = ({
 				setStore({
 					recipes: recipeList
 				});
+			setIngridientList: (ingredient) => {
+				setStore({ingredientList: ingredient});
 			}
 		}
 	}

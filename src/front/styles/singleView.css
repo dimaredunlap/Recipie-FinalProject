@@ -1,0 +1,38 @@
+.title {
+  font-size: 70px;
+  font-weight: bold;
+}
+.photo {
+  max-width: 450px;
+  max-height: 450px;
+}
+.rows {
+  display: flex;
+  padding: 20px;
+  margin: auto;
+}
+#recipeBox {
+  display: flex;
+  justify-content: space-evenly;
+}
+.vertical-line {
+  display: inline-block;
+  border-left: 1px solid #ccc;
+  margin: 0 10px;
+  height: 25px;
+}
+.cookTime {
+  font-weight: bolder;
+}
+.prepTime {
+   font-weight: bolder;
+ }
+ .totalTime {
+   font-weight: bolder;
+ }
+ .servings {
+   font-weight: bolder;
+ }
+p{
+   
+}
