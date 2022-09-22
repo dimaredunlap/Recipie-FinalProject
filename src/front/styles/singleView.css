@@ -33,7 +33,7 @@
  .servings {
    font-weight: bolder;
  }
- ol {
+ /* ol {
   list-style: none; counter-reset: li
 }
 li::before {
@@ -45,7 +45,7 @@ li::before {
 }
 li {
   counter-increment: li
-}
+} */
 /* ol li::before {
   content: counter(li); 
   color: red;
