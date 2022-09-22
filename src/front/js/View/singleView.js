@@ -83,7 +83,7 @@ export const SingleView = () => {
         </div>
         <div className="col-sm-3 col-3 align-self-start">
           <h2 className="directions">Directions</h2>
-          <p>{recipe.directions}</p>
+          <li>{recipe.directions}</li>
         </div>
       </div>
     </div>
