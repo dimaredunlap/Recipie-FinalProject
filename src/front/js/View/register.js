@@ -42,7 +42,6 @@ export const Register = () => {
         <input onChange={(e) => setPassword(e.target.value)} 
         value={password}
         className="form-control p-3 my-3" id="password" type="password" placeholder="Password" name="password" />
-       
         <button className="btn reg-btn btn-grad" type="submit">Register</button>
         <Link to="/login">
         <button className="btn reg-btn btn-grad" type="submit">Log in</button>
