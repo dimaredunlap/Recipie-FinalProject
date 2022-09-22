@@ -6,10 +6,10 @@
   max-width: 450px;
   max-height: 450px;
 }
-.rows {
+.row {
   display: flex;
-  padding: 20px;
-  margin: auto;
+  padding-bottom: 2px;
+  margin: 0 2px;
 }
 #recipeBox {
   display: flex;
@@ -18,41 +18,11 @@
 .vertical-line {
   display: inline-block;
   border-left: 1px solid #ccc;
-  margin: 0 10px;
+  margin: 0 7px;
   height: 25px;
 }
-.cookTime {
+.timeTitle {
   font-weight: bolder;
+  position:relative;
 }
-.prepTime {
-   font-weight: bolder;
- }
- .totalTime {
-   font-weight: bolder;
- }
- .servings {
-   font-weight: bolder;
- }
- /* ol {
-  list-style: none; counter-reset: li
-}
-li::before {
-  content: counter(li); 
-  color: red;
-  display: inline-block; 
-  width: 1em;
-  margin-left: -1em
-}
-li {
-  counter-increment: li
-} */
-/* ol li::before {
-  content: counter(li); 
-  color: red;
-  display: inline-block; 
-  width: 1em; 
-  margin-left: -1.5em;
-  margin-right: 0.5em; 
-  text-align: right; 
-  direction: rtl
-} */
+

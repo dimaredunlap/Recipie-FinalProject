@@ -32,33 +32,40 @@ export const SingleView = () => {
   return recipe == null ? (
     "loading"
   ) : (
+    // This is the section with the title, description, times, serving and favorite heart
     <div className="singleView container">
       <div id="introBox" className="container">
         <div className="title font-weight-bold">{recipe.title}</div>
         <p className="author">{recipe.credit}</p>
         <p className="description">{recipe.description}</p>
-        <div className="row mb-5 align-self-start container" id="times">
+        {/* start of the times boxes */}
+        <div className="grid mb-5 align-self-start container" id="times">
           <div className="col-3 d-flex">
-            <div className="prepTime">Prep Time</div>
+            <div className="timeTitle">Prep Time</div>
+            <span className="vertical-line"></span>
             <p className="row"> {recipe.prep_time}</p>
-            <span className="vertical-line"></span>
           </div>
           <div className="col-3 d-flex">
-            <div className="cookTime">Cook Time</div>
-            <p>{recipe.cook_time}</p>
+            <div className="timeTitle">Cook Time</div>
             <span className="vertical-line"></span>
+            <p className="row">{recipe.cook_time}</p>
           </div>
           <div className="col-3 d-flex">
-            <div className="totalTime">Total Time</div>
-            <p> {recipe.total_time}</p>
+            <div className="timeTitle">Total Time</div>
             <span className="vertical-line"></span>
+            <p className="row"> {recipe.total_time}</p>
           </div>
           <div className="col-3 d-flex">
-            <div className="servings">Servings </div>
-            <p>{recipe.servings}</p>
+            <div className="timeTitle">Servings </div>
+            <span className="vertical-line"></span>
+            <p className="row">{recipe.servings}</p>
+          </div>
+          <div>
+              <button id="heart" className="bi bi-heart "> Favorites</button>
           </div>
         </div>
       </div>
+      {/* This is the section with the image, ingredients and directions */}
       <div className="row mb-5 align-self-start" id="recipeBox">
         <img
           className="photo col-6"
