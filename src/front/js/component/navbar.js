@@ -41,7 +41,7 @@ export const Navbar = (props) => {
           <input
             className="search ms-5"
             type="text"
-            placeholder="Search.."
+            placeholder="Search by title.."
             onKeyDown={onSubmit}
             onChange={e => setInputValue(e.target.value)}
 		        value={inputValue}
