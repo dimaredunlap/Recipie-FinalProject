@@ -38,7 +38,7 @@ const Layout = () => {
           <Navbar query={query} setQuery={setQuery}/>
           <Routes>
             <Route element={<Home />} path="/" />
-            <Route element={<FormPage />} path="/Formpage" />
+            <Route element={<FormPage />} path="/formpage" />
             <Route element={<Register />} path="/register" />
             <Route element={<Login />} path="/login" />
             <Route element={<Favorite />} path="/favorite" />

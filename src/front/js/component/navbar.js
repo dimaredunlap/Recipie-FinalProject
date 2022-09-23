@@ -117,8 +117,15 @@ export const Navbar = (props) => {
                 <div className="dropdown">
                 <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i></button>
                 <ul className="dropdown-menu dropdown-menu-end">
+                  <Link to={`/list`} className="link">
                   <li className="dropdown-item">Grocery list</li>
-                  <li className="dropdown-item">Favorites</li>
+                  </Link>
+                  <Link to={`/favorite`} className="link">
+                    <li className="dropdown-item">Favorites</li>
+                  </Link>
+                  <Link to={`/formpage`} className="link">
+                    <li className="dropdown-item">Submit Recipe</li>   
+                  </Link>               
                   <button onClick={logout} className="dropdown-item">logout</button>
                 </ul>
                 </div>
