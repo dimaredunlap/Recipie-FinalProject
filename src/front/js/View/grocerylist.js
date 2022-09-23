@@ -21,6 +21,21 @@ export const Glist = () => {
         List 
       </h1>
       <SelectedIngredients ingredients={ingredients}/>
+     
+     
+      {/* <h1>Shopping List</h1>
+    <p id="first">Get it done today</p>
+    <input id="userinput" type="text" placeholder="enter items"/>
+    <button id="enter">Enter</button>
+    <ul id = "list"/>
+        <li>Notebook<button class="btn">Delete</button></li><br/>
+        <li>Jello<button class="btn">Delete</button></li><br/>
+        <li>Spinach<button class="btn">Delete</button></li><br/>
+        <li>Rice<button class="btn">Delete</button></li><br/>
+        <li>Birthday Cake<button class="btn">Delete</button></li><br/>
+        <li>Candles<button class="btn">Delete</button></li><br/>
+    <ul/> */}
+
     </div>
   );
 };

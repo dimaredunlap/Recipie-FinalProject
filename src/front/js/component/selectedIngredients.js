@@ -4,10 +4,12 @@ import "../../styles/SelectedIngredients.css";
 export const SelectedIngredients = (props) => {
   const [hovered, setHovered] = useState(false);
   const [ingredients, setIngredients] = useState(props.ingredients);
-
+  
   function deleteItem(index) {
     setIngredients(ingredients.filter((ingredient, idx) => idx != index));
   }
+ 
+
 
   // function visibilityChanger(index){
   //   let element= document.getElementById("icon"+index)
@@ -31,7 +33,7 @@ export const SelectedIngredients = (props) => {
             onMouseLeave={() => setHovered(false)}
             className="d-flex list-group-item"
           >
-            <span>{ingredient}</span>
+            <span className="ingredients">{ingredient}</span>
               <i
                 onClick={() => deleteItem(index)}
                 className={
