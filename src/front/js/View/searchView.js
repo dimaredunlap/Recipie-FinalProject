@@ -16,11 +16,9 @@ export const SearchResults = (props) => {
       <h1>{props.title}</h1>
       <Row className="container">
         {store.recipes.length > 0 && store.recipes.filter((recipe) => recipe.title.toLowerCase().includes(props.query)).map((recipe, idx) => (
-          <Link to={`/singleview/${recipe.id}`} className="link">
             <Col xs={12} className="container my-3">
               <Card key={idx} recipe={recipe} />
             </Col>
-          </Link>
         ))}
       </Row>
     </div>
