@@ -77,6 +77,7 @@ export const SingleView = () => {
             <span className="vertical-line"></span>
             <p className="row">{recipe.servings}</p>
           </div>
+          <div className="col-4"></div>
         </div>
       </div>
       {/* This is the section with the image, ingredients and directions */}
