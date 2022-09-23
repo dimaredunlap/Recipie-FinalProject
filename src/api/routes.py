@@ -198,7 +198,7 @@ def signup_user():
 @api.route('/login', methods=['POST'])
 def login_user():
     body = request.get_json(force=True)
-    user = db.session.query(User).filter(User.email == body['email']).first()
+    user = db.session.query(User).filter(User.username == body['username']).first()
     print(user.password)
     if user.password == body['password']:
         access_token = create_access_token(identity={'id': user.id})
@@ -206,9 +206,9 @@ def login_user():
     else:
         return jsonify('Error user not exist'), 401
 
-@api.route('/private',methods=["GET"])
-@jwt_required()
-def private():
-    user_token=get_jwt_identity()
-    user=User.query.get(user_token)
-    return jsonify(user.serialize()),200
+# @api.route('/private',methods=["GET"])
+# @jwt_required()
+# def private():
+#     user_token=get_jwt_identity()
+#     user=User.query.get(user_token)
+#     return jsonify(user.serialize()),200
