@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { Context } from "./store/appContext";
@@ -13,6 +13,7 @@ import injectContext from "./store/appContext";
 import { Favorite } from "./View/favorite.js";
 import { MealType } from "./View/mealType.js";
 import { SingleView } from "./View/singleView.js";
+import { SearchResults } from "./View/searchView";
 
 //create your first component
 const Layout = () => {
@@ -28,17 +29,20 @@ const Layout = () => {
     let dessert = store.recipes.filter((recipe) => recipe.category === "dessert")
     let drinks = store.recipes.filter((recipe) => recipe.category === "drinks")
 
+  const [query, setQuery] = useState ("")
+
   return (
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
-          <Navbar />
+          <Navbar query={query} setQuery={setQuery}/>
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<FormPage />} path="/Formpage" />
             <Route element={<Register />} path="/register" />
             <Route element={<Login />} path="/login" />
             <Route element={<Favorite />} path="/favorite" />
+            <Route element={<SearchResults query={query} setQuery={setQuery}/>} path="/search" />
             <Route element={<SingleView />} path="/singleview/:id" />
             <Route element={<MealType title="Snacks" mtype={snacks} />} exact path="/snacks" />
             <Route element={<MealType title="Breakfast" mtype={breakfast}/>} exact path="/breakfast" />

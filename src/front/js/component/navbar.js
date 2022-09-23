@@ -4,10 +4,11 @@ import "../../styles/navbar.css";
 import background from "../../img/layered-waves.jpg";
 import logo from "../../img/Foodgasm-logo.png";
 import moon from "../../img/Light-mode-moon.png";
-import { useNavigate, Link, NavLink } from "react-router-dom";
+import { useNavigate, Link, NavLink, Navigate } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = (props) => {
   const { store, actions } = useContext(Context);
+  
   let navigate = useNavigate();
   function navToReg() {
     navigate("/register");
@@ -18,9 +19,21 @@ export const Navbar = () => {
   function navToHome() {
     navigate("/home");
   }
+
+  const [inputValue, setInputValue] = useState ("")
+  const onSubmit = (onKeyDownEvent) => {
+    if (onKeyDownEvent.keyCode === 13) {
+      let newSearch = onKeyDownEvent.target.value;
+      props.setQuery(newSearch);
+      setInputValue("");
+      navigate ("/search")
+    }
+  };
+
    function logout() {
      actions.removeToken();
    }
+
   return (
     <>
       <nav
@@ -36,7 +49,10 @@ export const Navbar = () => {
           <input
             className="search ms-md-2 flex-grow-0 flex-sm-grow-1 me-3 me-sm-5 me-md-5 mb-4"
             type="text"
-            placeholder="Search.."
+            placeholder="Search by title.."
+            onKeyDown={onSubmit}
+            onChange={e => setInputValue(e.target.value)}
+		        value={inputValue}
           ></input>
           {/* Dark/Light mode button */}
           {/* <div className="navMoon" style={{ backgroundImage: `url(${moon})` }}>

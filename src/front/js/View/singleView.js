@@ -23,6 +23,23 @@ export const SingleView = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  var animateButton = function(e) {
+
+    e.preventDefault;
+    //reset animation
+    e.target.classList.remove('animate');
+    
+    e.target.classList.add('animate');
+    setTimeout(function(){
+      e.target.classList.remove('animate');
+    },700);
+  };
+  
+  var bubblyButtons = document.getElementsByClassName("bubbly-button");
+  
+  for (var i = 0; i < bubblyButtons.length; i++) {
+    bubblyButtons[i].addEventListener('click', animateButton, false);
+  }
 
   const handleChange = (event) => {
     
@@ -32,50 +49,51 @@ export const SingleView = () => {
   return recipe == null ? (
     "loading"
   ) : (
+    // This is the section with the title, description, times, serving and favorite heart
     <div className="singleView container">
       <div id="introBox" className="container">
         <div className="title font-weight-bold">{recipe.title}</div>
         <p className="author">{recipe.credit}</p>
         <p className="description">{recipe.description}</p>
-        <div className="row mb-5 align-self-start container" id="times">
-          <div className="col-3 d-flex">
-            <div className="prepTime">Prep Time</div>
+        {/* start of the times boxes */}
+        <div className="grid mb-5 align-self-start container row" id="times">
+          <div className="col-2 d-flex">
+            <div className="timeTitle">Prep Time</div>
+            <span className="vertical-line"></span>
             <p className="row"> {recipe.prep_time}</p>
+          </div>
+          <div className="col-2 d-flex">
+            <div className="timeTitle">Cook Time</div>
             <span className="vertical-line"></span>
+            <p className="row">{recipe.cook_time}</p>
           </div>
-          <div className="col-3 d-flex">
-            <div className="cookTime">Cook Time</div>
-            <p>{recipe.cook_time}</p>
+          <div className="col-2 d-flex">
+            <div className="timeTitle">Total Time</div>
             <span className="vertical-line"></span>
+            <p className="row"> {recipe.total_time}</p>
           </div>
-          <div className="col-3 d-flex">
-            <div className="totalTime">Total Time</div>
-            <p> {recipe.total_time}</p>
+          <div className="col-2 d-flex">
+            <div className="timeTitle">Servings </div>
             <span className="vertical-line"></span>
+            <p className="row">{recipe.servings}</p>
           </div>
-          <div className="col-3 d-flex">
-            <div className="servings">Servings </div>
-            <p>{recipe.servings}</p>
-          </div>
+          <div className="col-4"></div>
         </div>
       </div>
+      {/* This is the section with the image, ingredients and directions */}
       <div className="row mb-5 align-self-start" id="recipeBox">
-        <img
-          className="photo col-6"
-          src="https://www.apinchofhealthy.com/wp-content/uploads/2021/09/Close-up-side-shot-of-styled-sandwich-2.jpg"
-        ></img>
         <div className="col-3">
           <h2 className="ingredients">Ingredients</h2>
           <ul>
             {recipe.ingredients.split(",").map((ingredient) => {
               return (
                 <li key={ingredient}>
-                  <label for={ingredient}> {ingredient} </label>
                   <input 
                   type="checkbox" 
                   id="ingredient"
                   value={ingredient}
                   onChange={handleChange}></input>
+                  <label for={ingredient}> {ingredient} </label>
                 </li>
               );
             })}
@@ -83,8 +101,20 @@ export const SingleView = () => {
         </div>
         <div className="col-sm-3 col-3 align-self-start">
           <h2 className="directions">Directions</h2>
-          <p>{recipe.directions}</p>
+          <ol>
+            {recipe.directions.split(",").map((direction) => {
+              return (
+                <li key={direction}>
+                  <label for={direction}> {direction} </label>
+                </li>
+              );
+            })}
+          </ol>
         </div>
+        <img
+          className="photo col-6"
+          src="https://www.apinchofhealthy.com/wp-content/uploads/2021/09/Close-up-side-shot-of-styled-sandwich-2.jpg"
+        ></img>
       </div>
     </div>
   );
