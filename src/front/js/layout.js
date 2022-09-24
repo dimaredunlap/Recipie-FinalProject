@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { Context } from "./store/appContext";
 import { Home } from "./View/home";
-
-import { FormPage } from "./View/form";
+import { Glist } from "./View/grocerylist.js"
+import {FormPage} from "./View/form"
 import { Register } from "./View/register.js";
 import { Login } from "./View/login.js";
 import { Navbar } from "./component/navbar";
@@ -51,6 +51,7 @@ const Layout = () => {
             <Route element={<MealType title="Dessert" mtype={dessert}/>} exact path="/dessert" />
             <Route element={<MealType title="Drinks" mtype={drinks}/>} exact path="/drinks" />
             <Route element={<h1>Not found!</h1>} />
+            <Route element={<Glist />} path="/list" />
           </Routes>
         </ScrollToTop>
       </BrowserRouter>
