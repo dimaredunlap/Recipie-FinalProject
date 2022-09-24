@@ -91,6 +91,7 @@ def post_recipe():
         recipe.ingredients = recipe_dictionary['ingredients']
         recipe.directions = recipe_dictionary['directions']
         recipe.category = recipe_dictionary['category']
+        recipe.url = recipe_dictionary['url']
     except:
         return jsonify({"fail": "missing some content"})
     db.session.add(recipe)

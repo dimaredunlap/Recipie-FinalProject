@@ -14,7 +14,7 @@ export const Card = (props) => {
           <Link to={`/singleview/${props.recipe.id}`} className="link">
           <img
             className="projcard-img"
-            src="https://picsum.photos/800/600?image=1041"
+            src={props.recipe.url}
           />
           </Link>
           <div className="projcard-textbox">

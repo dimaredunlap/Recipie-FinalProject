@@ -37,6 +37,7 @@ class Recipe(db.Model):
     ingredients = Column(String, nullable=False)
     directions = Column(String, nullable=False, unique=True)
     category = Column(String, nullable=False)
+    url = Column(String, nullable=False, unique=True)
     credit = Column(String)
     
     def serialize(self):
@@ -51,6 +52,7 @@ class Recipe(db.Model):
             "ingredients": self.ingredients,
             "directions": self.directions,
             "category": self.category,
+            "url": self.url,
             "credit": self.credit,
             "user_id": self.user_id,
         }

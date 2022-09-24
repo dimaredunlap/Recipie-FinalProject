@@ -113,7 +113,7 @@ export const SingleView = () => {
         </div>
         <img
           className="photo col-6"
-          src="https://www.apinchofhealthy.com/wp-content/uploads/2021/09/Close-up-side-shot-of-styled-sandwich-2.jpg"
+          src={recipe.url}
         ></img>
       </div>
     </div>

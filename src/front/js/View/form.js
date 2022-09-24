@@ -14,6 +14,7 @@ export const FormPage = () => {
   const [totalTime, setTotalTime] = useState("");
   const [mealType, setMealType] = useState("");
   const [credit, setCredit] = useState("");
+  const [url, setUrl] = useState("");
   const {actions} = useContext(Context);
 
   function onsubmit() {
@@ -32,6 +33,7 @@ export const FormPage = () => {
         ingredients: ingredients,
         directions: directions,
         category: mealType,
+        url: url,
       }),
     }) 
     .then((res) => res.json())
@@ -171,9 +173,13 @@ export const FormPage = () => {
         </div>
 
         <label className="customFile" htmlFor="customFile">
-          Submit Photo Here
+          Submit Photo Url Here
         </label>
-        <input type="file" className="form-control  btn my-3" id="customFile" />
+        <input value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            className="form-control input-sm"
+            id="credit"
+            type="text"/>
         <div>
           <button onClick={onsubmit} className="btn my-3 form-btn btn-grad">
             Submit
