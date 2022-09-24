@@ -1,6 +1,8 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
 :root{
     --Mint: #7CD9A1;
     --Dark-Mint: #60AB7B;
@@ -16,3 +18,4 @@
     --Sub-heading-2-size: 18px;
     --Body-size: 16px;
 }
+

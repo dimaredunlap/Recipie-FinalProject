@@ -83,6 +83,7 @@ def post_recipe():
     recipe = Recipe()
     try:
         recipe.title = recipe_dictionary['title']
+        recipe.description = recipe_dictionary['description']
         recipe.servings = recipe_dictionary['servings']
         recipe.prep_time = recipe_dictionary['prep_time']
         recipe.cook_time = recipe_dictionary['cook_time']
@@ -90,6 +91,7 @@ def post_recipe():
         recipe.ingredients = recipe_dictionary['ingredients']
         recipe.directions = recipe_dictionary['directions']
         recipe.category = recipe_dictionary['category']
+        recipe.url = recipe_dictionary['url']
     except:
         return jsonify({"fail": "missing some content"})
     db.session.add(recipe)
@@ -189,7 +191,7 @@ def delete_list(id):
 @api.route('/signup', methods=['POST'])
 def signup_user():
     body = request.get_json(force=True)
-    new_user = User(email=body['email'], password=body['password'], is_active=True)
+    new_user = User(email=body['email'], password=body['password'], username=body['username'])
     db.session.add(new_user)
     db.session.commit()
     return jsonify(new_user.serialize()), 201
@@ -197,7 +199,7 @@ def signup_user():
 @api.route('/login', methods=['POST'])
 def login_user():
     body = request.get_json(force=True)
-    user = db.session.query(User).filter(User.email == body['email']).first()
+    user = db.session.query(User).filter(User.username == body['username']).first()
     print(user.password)
     if user.password == body['password']:
         access_token = create_access_token(identity={'id': user.id})
@@ -205,10 +207,9 @@ def login_user():
     else:
         return jsonify('Error user not exist'), 401
 
-@api.route('/private',methods=["GET"])
-@jwt_required()
-def private():
-    user_token=get_jwt_identity()
-    user=User.query.get(user_token)
-    return jsonify(user.serialize()),200
-
+# @api.route('/private',methods=["GET"])
+# @jwt_required()
+# def private():
+#     user_token=get_jwt_identity()
+#     user=User.query.get(user_token)
+#     return jsonify(user.serialize()),200

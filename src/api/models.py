@@ -20,8 +20,6 @@ class User(db.Model):
         return{
             "id": self.id,
             "username": self.username,
-            "firstname": self.firstname,
-            "lastname": self.lastname,
             "email": self.email
         }
         
@@ -33,12 +31,13 @@ class Recipe(db.Model):
     title = Column(String, nullable=False, unique=True)
     description = Column(String, nullable=False)
     servings = Column(String, nullable=False)
-    prep_time = Column(Integer, nullable=False)
-    cook_time = Column(Integer, nullable=False)
-    total_time = Column(Integer, nullable=False)
+    prep_time = Column(String, nullable=False)
+    cook_time = Column(String, nullable=False)
+    total_time = Column(String, nullable=False)
     ingredients = Column(String, nullable=False)
     directions = Column(String, nullable=False, unique=True)
     category = Column(String, nullable=False)
+    url = Column(String, nullable=False, unique=True)
     credit = Column(String)
     
     def serialize(self):
@@ -53,6 +52,7 @@ class Recipe(db.Model):
             "ingredients": self.ingredients,
             "directions": self.directions,
             "category": self.category,
+            "url": self.url,
             "credit": self.credit,
             "user_id": self.user_id,
         }
