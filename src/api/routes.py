@@ -139,7 +139,7 @@ def create_favorite():
     return jsonify(new_favorite.serialize()), 200
 
 #Delete favorite recipe
-@api.route('/favorite/recipe/<int:id>', methods=['PUT'])
+@api.route('/user/favorite/<int:id>', methods=['PUT'])
 def delete_favorite(id):
     remove_favorite = favorite.query.filter_by(id=id).first()
     print("You sure you want to delete favorite recipe #:" + id)

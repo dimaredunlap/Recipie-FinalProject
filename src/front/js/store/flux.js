@@ -42,12 +42,14 @@ const getState = ({
 				setStore({
 					recipes: recipeList
 				});
+			},
 			setIngridientList: (ingredient) => {
 				setStore({ingredientList: ingredient});
 			}
-		}
+		
+			}
 	}
-}}
+}
 
 
 export default getState;
