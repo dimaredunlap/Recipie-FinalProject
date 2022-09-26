@@ -20,6 +20,9 @@ export const Home = () => {
     let dessert = store.recipes.filter((recipe) => recipe.category === "dessert")
     let drinks = store.recipes.filter((recipe) => recipe.category === "drinks")
 
+    console.log(store.recipes)
+    
+
   return (
     <div className="container text-center mt-5">
       <Carousel  />

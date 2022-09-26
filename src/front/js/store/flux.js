@@ -8,6 +8,7 @@ const getState = ({
 			token: null,
 			recipes: [],
 			ingridientList: [],
+			favorite: [],
 		
 		},
 		actions: {
@@ -33,7 +34,21 @@ const getState = ({
 						setStore({
 							recipes: data
 						});
-						console.log(data);
+						console.log(`Recipes ${data}`);
+					})
+					.catch((error) => console.log(error));
+			},
+			getAllFavorites: () => {
+				fetch(`${process.env.BACKEND_URL}/api/favorites`, {
+					method: "GET",
+					headers: { "Content-Type": "application/json" },
+				  })
+					.then((result) => result.json())
+					.then((data) => {
+					  setStore({
+						favorite: data
+					});
+					  console.log(`favorites ${data}`)
 					})
 					.catch((error) => console.log(error));
 			},
@@ -45,6 +60,9 @@ const getState = ({
 			},
 			setIngridientList: (ingredient) => {
 				setStore({ingredientList: ingredient});
+			},
+			setFavorite:(favorite) => {
+				setStore({favorite: favorite});
 			}
 		
 			}
