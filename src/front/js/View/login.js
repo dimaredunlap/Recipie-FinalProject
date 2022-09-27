@@ -4,13 +4,11 @@ import { LoginUser } from "../Request/user.js";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import "../../styles/login.css";
 
-
-
 export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
-  const {actions} = useContext(Context);
+  const { actions } = useContext(Context);
 
   const userLogin = async () => {
     try {
@@ -21,9 +19,9 @@ export const Login = () => {
       const response = await LoginUser(user);
       const data = await response.json();
       if (response.status === 200) {
-        actions.setToken(data)
+        actions.setToken(data.access_token, data.user_id);
         console.log(data);
-        localStorage.setItem("token", data);
+        localStorage.setItem("token", data.access_token);
       }
     } catch (err) {
       console.log("Login error: ", err);
@@ -44,7 +42,7 @@ export const Login = () => {
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
-        value={password}
+          value={password}
           type="password"
           className="login-input p-3 mb-2 mt-3 form-control"
           placeholder="Password"
@@ -60,9 +58,9 @@ export const Login = () => {
           Login
         </button>
         <Link to="/register">
-        <button type="submit" className="log-btn btn-grad mb-2 mt-3">
-          Register
-        </button>
+          <button type="submit" className="log-btn btn-grad mb-2 mt-3">
+            Register
+          </button>
         </Link>
       </div>
     </div>

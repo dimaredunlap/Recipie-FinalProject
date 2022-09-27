@@ -59,14 +59,15 @@ export const SingleView = () => {
       </div>
       {/* This is the section with the image, ingredients and directions */}
       <div className="row mb-5 align-self-start" id="recipeBox">
-        <div className="col-3">
+        <div className="col-4">
           <h2 className="ingredients">Ingredients</h2>
-          <ul>
+          <ul className="p-0">
             {recipe.ingredients.split(",").map((ingredient) => {
               return (
-                <li key={ingredient}>
+                <li key={ingredient} className="d-flex p-2">
                   <input
                     type="checkbox"
+                    className="align-self-start mt-2 me-2"
                     id="ingredient"
                     value={ingredient}
                     onChange={(e) => actions.ingredientListFunction(ingredient)}
@@ -77,14 +78,14 @@ export const SingleView = () => {
             })}
           </ul>
         </div>
-        <div className="col-sm-3 col-3 align-self-start">
+        <div className="col-sm-3 col-4 align-self-start">
           <h2 className="directions">Directions</h2>
-          <ol>
+          <ol className="ol p-0">
             {recipe.directions.split(";").map((direction) => {
               return (
-                <ol key={direction} className="container">
-                  <p htmlFor={direction}> {direction} </p>
-                </ol>
+                <li key={direction} className="container pb-3 li">
+                  <label htmlFor={direction}> {direction} </label>
+                </li>
               );
             })}
           </ol>

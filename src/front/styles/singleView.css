@@ -10,7 +10,7 @@
   padding-bottom: 2px;
   margin: 0 2px;
 }
-.description{
+.description {
   font-size: 20px;
   font-style: italic;
 }
@@ -27,11 +27,27 @@
 }
 .timeTitle {
   font-weight: bolder;
-  position:relative;
+  position: relative;
 }
-#times{
+#times {
   justify-content: space-between;
 }
-ul, ol{
+ul,
+ol {
   font-size: 20px;
+}
+.ol {
+  list-style: none;
+  counter-reset: li;
+}
+.li {
+  counter-increment: li;
+}
+.li::before {
+  content: counter(li);
+  color: red;
+  /* display: inline; */
+  width: 1em;
+  justify-content: flex-start;
+  /* margin-bottom: -16px; */
 }

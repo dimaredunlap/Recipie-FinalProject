@@ -22,29 +22,9 @@ export const Favorite = () => {
     <>
       <div className="container">
         <h1 id="h1" className="">
-          Favorite Dishes 
+          Favorites
         </h1>
         <div className="row d-flex flex-column align-items-center flex-md-row">
-          <FavCard />
-          <FavCard />
-          <FavCard />
-          <FavCard />
-          <FavCard />
-          <FavCard />
-          <FavCard />
-          <FavCard />
-        </div>
-        <h1 id="h1" className="">
-          Favorite Drinks
-        </h1>
-        <div className="row d-flex flex-column align-items-center flex-md-row">
-          <FavCard />
-          <FavCard />
-          <FavCard />
-          <FavCard />
-          <FavCard />
-          <FavCard />
-          <FavCard />
           <FavCard />
         </div>
       </div>
