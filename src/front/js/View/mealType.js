@@ -16,7 +16,7 @@ export const MealType = (props) => {
       <h1>{props.title}</h1>
       <Row className="container">
         {props.mtype.map((recipe, idx) => (
-            <Col xs={12} className="container my-3">
+            <Col key={idx} xs={12} className="container my-3">
               <Card key={idx} recipe={recipe} />
             </Col>
         ))}
