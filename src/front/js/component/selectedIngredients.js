@@ -33,9 +33,9 @@ export const SelectedIngredients = (props) => {
             key={index}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className="d-flex list-group-item"
+            className="list-group-item"
           >
-            <span className="ingredients">{ingredient}</span>
+            <span className="items">{ingredient}</span>
               <i
                 onClick={() => actions.ingredientListFunction(ingredient, index)}
                 className={

@@ -14,13 +14,13 @@ export const Glist = () => {
 
   
   return (
-    <div class="container-center recebox">
-      <h1 class="text-start">
+    <div className="container recebox">
+      <h1 className="text-start">
         {//Recipe title
         }
         List 
       </h1>
-      <SelectedIngredients className="items"ingredients={ingredients}/>
+      <SelectedIngredients className="items container-flex"ingredients={ingredients}/>
     </div>
   );
 };
