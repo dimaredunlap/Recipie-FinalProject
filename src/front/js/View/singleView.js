@@ -8,8 +8,7 @@ import { useContext } from "react";
 export const SingleView = () => {
   const id = useParams().id;
   const [recipe, setRecipe] = useState(null);
-  const { store, actions } =useContext(Context);
-  
+  const { store, actions } = useContext(Context);
 
   useEffect(() => {
     fetch(`${process.env.BACKEND_URL}/api/recipe/${id}`, {
@@ -23,31 +22,6 @@ export const SingleView = () => {
       .catch((error) => console.log(error));
   }, []);
 
-  // var animateButton = function(e) {
-
-  //   e.preventDefault;
-  //   //reset animation
-  //   e.target.classList.remove('animate');
-    
-  //   e.target.classList.add('animate');
-  //   setTimeout(function(){
-  //     e.target.classList.remove('animate');
-  //   },700);
-  // };
-  
-  // var bubblyButtons = document.getElementsByClassName("bubbly-button");
-  
-  // for (var i = 0; i < bubblyButtons.length; i++) {
-  //   bubblyButtons[i].addEventListener('click', animateButton, false);
-  // }
-
-  // const handleChange = (e, ingredient) => {
-  //   setChecked(e.target.checked);
-  //   if (checked === true){
-  //     actions.ingridientListFunction(ingredient);
-  //   }
-  // };
-  
   console.log(`List ${store.ingredientList}`);
   return recipe == null ? (
     "loading"
@@ -91,12 +65,13 @@ export const SingleView = () => {
             {recipe.ingredients.split(",").map((ingredient) => {
               return (
                 <li key={ingredient}>
-                  <input 
-                  type="checkbox" 
-                  id="ingredient"
-                  value={ingredient}
-                  onChange={(e) => actions.ingredientListFunction(ingredient)}></input>
-                  <label for={ingredient}> {ingredient} </label>
+                  <input
+                    type="checkbox"
+                    id="ingredient"
+                    value={ingredient}
+                    onChange={(e) => actions.ingredientListFunction(ingredient)}
+                  ></input>
+                  <label htmlFor={ingredient}> {ingredient} </label>
                 </li>
               );
             })}
@@ -107,17 +82,14 @@ export const SingleView = () => {
           <ol>
             {recipe.directions.split(",").map((direction) => {
               return (
-                <li key={direction}>
-                  <label for={direction}> {direction} </label>
-                </li>
+                <ol key={direction} className="container">
+                  <p htmlFor={direction}> {direction} </p>
+                </ol>
               );
             })}
           </ol>
         </div>
-        <img
-          className="photo col-6"
-          src={recipe.url}
-        ></img>
+        <img className="photo col-6" src={recipe.url}></img>
       </div>
     </div>
   );

@@ -1,19 +1,15 @@
-.recebox{
-    background-color: #7CD9A1;
-    padding-left: 10px;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    padding-right:40px ;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 25px;
-    
+.recebox {
+  background-color: #7cd9a1;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-right: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 25px;
 }
-.text-start{
-    font-size: 60px;
+.text-start {
+  font-size: 60px;
 }
-.ingredients{
-
-    font-size: 20px ;
+.items {
+  font-size: 20px;
 }
-
-
