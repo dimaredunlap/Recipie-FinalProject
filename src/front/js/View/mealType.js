@@ -12,7 +12,7 @@ export const MealType = (props) => {
   const { store, actions } = useContext(Context);
 
   return (
-    <div className="text-center mt-5">
+    <div className="text-center mt-5 container">
       <h1>{props.title}</h1>
       <Row className="container">
         {props.mtype.map((recipe, idx) => (
