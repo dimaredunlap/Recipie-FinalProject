@@ -93,7 +93,7 @@ export const FormPage = () => {
             id="ingre"
             rows="3"
             type="textarea"
-            placeholder="Separate each ingredient with a comma ','"
+            placeholder="Separate each ingredient with a comma ,"
           />
         </div>
 
@@ -106,7 +106,7 @@ export const FormPage = () => {
             id="directions"
             rows="3"
             type="textarea"
-            placeholder="Separate each step with a comma ','"
+            placeholder="Separate each step with a semi-colon ;"
           />
         </div>
 

@@ -80,7 +80,7 @@ export const SingleView = () => {
         <div className="col-sm-3 col-3 align-self-start">
           <h2 className="directions">Directions</h2>
           <ol>
-            {recipe.directions.split(",").map((direction) => {
+            {recipe.directions.split(";").map((direction) => {
               return (
                 <ol key={direction} className="container">
                   <p htmlFor={direction}> {direction} </p>
