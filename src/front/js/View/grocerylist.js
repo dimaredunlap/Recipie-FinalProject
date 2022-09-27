@@ -15,10 +15,10 @@ export const Glist = () => {
   
   return (
     <div className="container recebox">
-      <h1 className="text-start">
+      <h1 className="listTitle">
         {//Recipe title
         }
-        List 
+        Grocery List 
       </h1>
       <SelectedIngredients className="items container-flex"ingredients={ingredients}/>
     </div>

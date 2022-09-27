@@ -9,8 +9,13 @@
   width: 700px;
   justify-content: center;
 }
-.text-start {
+.listTitle {
   font-size: 60px;
+  justify-content: center;
+  text-align: center;
+  text-shadow: 8px 4px 8px rgb(3, 187, 58);
+  color: rgb(255, 255, 255);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .items {
   font-size: 20px;
