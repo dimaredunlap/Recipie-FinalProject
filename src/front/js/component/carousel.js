@@ -55,7 +55,7 @@ export const Carousel = () => {
     </div>
     <div className="description">
     <h1>Meals of the day</h1>
-    <p>meal type of the day</p>
+    <p>Having a hard time deciding what to make? Here's your meals for the day!</p>
     {/* api info */}
     
 

@@ -25,7 +25,7 @@ export const Home = () => {
 
   return (
     <div className="container text-center mt-5">
-      <Carousel  />
+      {/* <Carousel  /> */}
       <h2>Breakfast</h2>
       <SmallCarousel routePath={breakfast} />
       <h2>Lunch</h2>
