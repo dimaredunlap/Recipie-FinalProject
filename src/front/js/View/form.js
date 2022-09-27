@@ -40,7 +40,7 @@ export const FormPage = () => {
     .then((res) => {
       actions.setRecipes(res);
     })
-    alert("You've successfully submitted a recipe! Please return to the home page!");
+    alert("You've successfully submitted a recipe!");
   }
   return (
     <div className="container form mt-5">
