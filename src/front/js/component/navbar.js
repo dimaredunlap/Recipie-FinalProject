@@ -40,7 +40,7 @@ export const Navbar = (props) => {
         id="navbar"
         className="navbar fixed-top navbar-expand-lg d-flex justify-content-center flex-row pt-0"
       >
-        <div className="container-md mt-lg-5 flex-row justify-content-start justify-content-sm-evenly ">
+        <div className="container-lg container-fluid mt-lg-5 flex-row justify-content-start justify-content-sm-evenly ">
         <Link to="/">
             <img className="logo navbar-brand mt-4" src={logo}></img>
           </Link>
@@ -115,14 +115,14 @@ export const Navbar = (props) => {
               ) : (
                 <>
                 <div className="dropdown">
-                <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i></button>
+                <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i className="bi bi-person-circle"></i></button>
                 <ul className="dropdown-menu dropdown-menu-end">
                   <Link to={`/list`} className="link">
                   <li className="dropdown-item">Grocery list</li>
                   </Link>
-                  <Link to={`/favorite`} className="link">
+                  {/* <Link to={`/favorite`} className="link">
                     <li className="dropdown-item">Favorites</li>
-                  </Link>
+                  </Link> */}
                   <Link to={`/formpage`} className="link">
                     <li className="dropdown-item">Submit Recipe</li>   
                   </Link>               

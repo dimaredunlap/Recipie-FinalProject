@@ -12,8 +12,8 @@ export const SearchResults = (props) => {
   const { store, actions } = useContext(Context);
 
   return (
-    <div className="text-center mt-5">
-      <h1>{props.title}</h1>
+    <div className="text-center mt-5 container">
+      <h1>Search Results</h1>
       <Row className="container">
         {store.recipes.length > 0 && store.recipes.filter((recipe) => recipe.title.toLowerCase().includes(props.query)).map((recipe, idx) => (
             <Col xs={12} className="container my-3">

@@ -1,26 +1,26 @@
-.small-carousel{
+.small-carousel {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.small-carousel-container{
-    overflow: auto;
-    height: 450px;
-    flex-wrap: nowrap;
-    margin-top: 20px;
-
+.small-carousel-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 450px;
+  flex-wrap: nowrap;
+  margin-top: 20px;
 }
 
 .small-carousel-container::-webkit-scrollbar {
-    width: 20px;
-  }
+  width: 20px;
+}
 
-  .small-carousel-container::-webkit-scrollbar-track {
-    background: #e1e1e1;
-    border-radius: 14px;
-  }
+.small-carousel-container::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 14px;
+}
 
-  .small-carousel-container::-webkit-scrollbar-thumb {
-    background-color: #7cd9a1;
-    border-radius: 14px;
-    border: 3px solid #454545;
-  }
+.small-carousel-container::-webkit-scrollbar-thumb {
+  background-color: #7cd9a1;
+  border-radius: 14px;
+  border: 3px solid #454545;
+}

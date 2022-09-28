@@ -15,8 +15,8 @@ export const FormPage = () => {
   const [mealType, setMealType] = useState("");
   const [credit, setCredit] = useState("");
   const [url, setUrl] = useState("");
-  const {actions} = useContext(Context);
-
+  const {store, actions} = useContext(Context);
+  
   function onsubmit() {
     fetch(`${process.env.BACKEND_URL}/api/recipe`, {
       method: "POST",
@@ -24,6 +24,7 @@ export const FormPage = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify({
+        user_id: store.user_id,
         title: title,
         description: description,
         servings: servings,
@@ -39,7 +40,9 @@ export const FormPage = () => {
     .then((res) => res.json())
     .then((res) => {
       actions.setRecipes(res);
+      console.log("FORM RESPONSE",res);
     })
+    alert("You've successfully submitted a recipe!");
   }
   return (
     <div className="container form mt-5">
@@ -92,7 +95,7 @@ export const FormPage = () => {
             id="ingre"
             rows="3"
             type="textarea"
-            placeholder="Separate each ingredient with a comma ','"
+            placeholder="Separate each ingredient with a comma ,"
           />
         </div>
 
@@ -105,7 +108,7 @@ export const FormPage = () => {
             id="directions"
             rows="3"
             type="textarea"
-            placeholder="Separate each step with a comma ','"
+            placeholder="Separate each step with a semi-colon ;"
           />
         </div>
 

@@ -132,11 +132,15 @@ def get_favorite(id):
 
 @api.route('/user/favorite', methods=['POST'])
 def create_favorite():
-    favorite = request.get_json()
-    new_favorite = Favorite(user_id=favorite['user_id'], recipe_id=favorite['recipe_id'], recipe_name=favorite['recipe_name'])
-    db.session.add(new_favorite)
+    favorite_dictionary = request.json
+    newfavorite = Favorite()
+    newfavorite.user_id = favorite_dictionary['user_id'],
+    newfavorite.recipe_id = favorite_dictionary['recipe_id'],
+    newfavorite.recipe_name = favorite_dictionary['recipe_name']
+    db.session.add(newfavorite)
     db.session.commit()
-    return jsonify(new_favorite.serialize()), 200
+    favorite_list= [favorite.serialize() for favorite in Favorite.query.filter_by(user_id=favorite_dictionary['user_id'])]
+    return jsonify(favorite_list), 200
 
 #Delete favorite recipe
 @api.route('/user/favorite/<int:id>', methods=['PUT'])
@@ -203,7 +207,7 @@ def login_user():
     print(user.password)
     if user.password == body['password']:
         access_token = create_access_token(identity={'id': user.id})
-        return jsonify(access_token), 200
+        return jsonify(access_token= access_token, user_id=user.id), 200
     else:
         return jsonify('Error user not exist'), 401
 

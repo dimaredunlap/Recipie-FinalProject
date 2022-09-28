@@ -1,19 +1,30 @@
-.recebox{
-    background-color: #7CD9A1;
-    padding-left: 10px;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    padding-right:40px ;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 25px;
-    
+.recebox {
+  background-color: #7cd9a1;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-right: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 25px;
+  width: 700px;
+  justify-content: center;
 }
-.text-start{
-    font-size: 60px;
+.listTitle {
+  font-size: 60px;
+  justify-content: center;
+  text-align: center;
+  text-shadow: 8px 4px 8px rgb(3, 187, 58);
+  color: rgb(255, 255, 255);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-.ingredients{
-
-    font-size: 20px ;
+.items {
+  font-size: 20px;
+  justify-content: center;
 }
-
-
+.list-group{
+  width: 680px;
+  justify-content: center;
+}
+.visible{
+  float: right;
+}

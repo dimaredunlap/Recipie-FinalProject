@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../../styles/SelectedIngredients.css";
+import { Context } from "../store/appContext";
 
 export const SelectedIngredients = (props) => {
   const [hovered, setHovered] = useState(false);
   const [ingredients, setIngredients] = useState(props.ingredients);
+  const { store, actions } = useContext(Context)
   
   function deleteItem(index) {
-    setIngredients(ingredients.filter((ingredient, idx) => idx != index));
+    setIngredients(store.ingredientList.filter((ingredient, idx) => idx != index));
   }
  
 
@@ -22,20 +24,20 @@ export const SelectedIngredients = (props) => {
   //     element.classList.toggle("visible")
   // }
 
-
+  console.log(store.ingredientList)
   return (
     <div className="col-5">
       <ul className="list-group">
-        {ingredients.map((ingredient, index) => (
+        {store.ingredientList.map((ingredient, index) => (
           <li
             key={index}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            className="d-flex list-group-item"
+            className="list-group-item"
           >
-            <span className="ingredients">{ingredient}</span>
+            <span className="items">{ingredient}</span>
               <i
-                onClick={() => deleteItem(index)}
+                onClick={() => actions.ingredientListFunction(ingredient, index)}
                 className={
                   hovered ? "visible fas fa-ban ms-auto" : "invisible "
                 }
