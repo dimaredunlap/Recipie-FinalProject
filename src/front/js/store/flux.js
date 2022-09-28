@@ -52,7 +52,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			.catch((error) => console.log(error));
 		},
 		postFavorite: (recipe_id, recipe_name) => {
-		  fetch(`${process.env.BACKEND_URL}/api/user/favorites`, {
+		  fetch(`${process.env.BACKEND_URL}/api/${getStore().user_id}/favorites`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({

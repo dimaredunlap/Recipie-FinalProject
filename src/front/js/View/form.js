@@ -15,8 +15,8 @@ export const FormPage = () => {
   const [mealType, setMealType] = useState("");
   const [credit, setCredit] = useState("");
   const [url, setUrl] = useState("");
-  const {actions} = useContext(Context);
-
+  const {store, actions} = useContext(Context);
+  
   function onsubmit() {
     fetch(`${process.env.BACKEND_URL}/api/recipe`, {
       method: "POST",
@@ -24,6 +24,7 @@ export const FormPage = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify({
+        user_id: store.user_id,
         title: title,
         description: description,
         servings: servings,
@@ -39,6 +40,7 @@ export const FormPage = () => {
     .then((res) => res.json())
     .then((res) => {
       actions.setRecipes(res);
+      console.log("FORM RESPONSE",res);
     })
     alert("You've successfully submitted a recipe!");
   }
